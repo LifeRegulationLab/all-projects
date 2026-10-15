@@ -9,6 +9,7 @@ Index of Life Regulation Lab projects. Link this repo in a conversation to give 
 | [headuntangled-site](https://github.com/LifeRegulationLab/headuntangled-site) | headuntangled.com: the Head Untangled website. Static HTML, built with `build.py`, served by Cloudflare Pages. |
 | [liferegulationlab-site](https://github.com/LifeRegulationLab/liferegulationlab-site) | Life Regulation Lab website (Next.js). |
 | [formulationassistant-site](https://github.com/LifeRegulationLab/formulationassistant-site) | formulationassistant.com: production site for Formulation Assistant (Astro + Tailwind, Cloudflare Pages). |
+| [coaching-studio](https://github.com/LifeRegulationLab/coaching-studio) | Coaching studio: assessments, workbooks and reports for coaching clients, web plus iPhone and Android (Vite + React + Capacitor). |
 | [claude-mods](https://github.com/LifeRegulationLab/claude-mods) | Claude Code mods: auto-model, background-board, clean-view, context-gauge, cost-meter, dashboard, morning-brief, production-tracker, usage-limits. |
 | [LifeRegulationLab](https://github.com/LifeRegulationLab/LifeRegulationLab) | GitHub org profile repo. |
 
