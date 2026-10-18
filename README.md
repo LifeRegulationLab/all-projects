@@ -13,6 +13,7 @@ Index of Life Regulation Lab projects. Link this repo in a conversation to give 
 | [voice-studio](https://github.com/LifeRegulationLab/voice-studio) | Voice Studio: local narration and video for Head Untangled, coaching app lessons and Cairn Notes, uploaded to YouTube as private. |
 | [Desk](https://github.com/LifeRegulationLab/Desk) | Desk: Stuart's own office app for documents, spreadsheets, slides, PDFs, tasks, databases and drawings, using normal Microsoft file formats. |
 | [dashboards](https://github.com/LifeRegulationLab/dashboards) | Personal dashboard (iPhone and Mac web app) for YouTube, Shopify and Stripe numbers, replacing vidIQ and a paid Shopify plan. |
+| [content-engine](https://github.com/LifeRegulationLab/content-engine) | Content Engine: one instruction to a published product. Researches, scripts, narrates and cuts long videos and Shorts, makes workbooks and courses, and publishes on a schedule to YouTube, the website and the shop. |
 | [claude-mods](https://github.com/LifeRegulationLab/claude-mods) | Claude Code mods: auto-model, background-board, clean-view, context-gauge, cost-meter, dashboard, morning-brief, production-tracker, usage-limits. |
 | [LifeRegulationLab](https://github.com/LifeRegulationLab/LifeRegulationLab) | GitHub org profile repo. |
 
