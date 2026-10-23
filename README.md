@@ -2,6 +2,8 @@
 
 Index of Life Regulation Lab projects. Link this repo in a conversation to give Claude the full project map.
 
+Where each project stands (builds, TestFlight, open pull requests, next steps) is in [STATUS.md](STATUS.md).
+
 | Repo | What it is |
 | --- | --- |
 | [regulate](https://github.com/LifeRegulationLab/regulate) | Regulate: capacity-aware app for late-diagnosed neurodivergent adults. |
@@ -13,6 +15,9 @@ Index of Life Regulation Lab projects. Link this repo in a conversation to give 
 | [voice-studio](https://github.com/LifeRegulationLab/voice-studio) | Voice Studio: local narration and video for Head Untangled, coaching app lessons and Cairn Notes, uploaded to YouTube as private. |
 | [Desk](https://github.com/LifeRegulationLab/Desk) | Desk: Stuart's own office app for documents, spreadsheets, slides, PDFs, tasks, databases and drawings, using normal Microsoft file formats. |
 | [dashboards](https://github.com/LifeRegulationLab/dashboards) | Personal dashboard (iPhone and Mac web app) for YouTube, Shopify and Stripe numbers, replacing vidIQ and a paid Shopify plan. |
+| [pace](https://github.com/LifeRegulationLab/pace) | Pace: day planner and focus timer for iPhone, iPad, Mac and Apple Watch. |
+| [mull](https://github.com/LifeRegulationLab/mull) | Mull: self-coaching app for iPhone, Mac and Apple Watch (App Store version of Stuart's private Coach). |
+| [content-engine](https://github.com/LifeRegulationLab/content-engine) | Concept to product: research, script, narrate, animate and publish videos, workbooks and courses. |
 | [claude-mods](https://github.com/LifeRegulationLab/claude-mods) | Claude Code mods: auto-model, background-board, clean-view, context-gauge, cost-meter, dashboard, morning-brief, production-tracker, usage-limits. |
 | [LifeRegulationLab](https://github.com/LifeRegulationLab/LifeRegulationLab) | GitHub org profile repo. |
 
