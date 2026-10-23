@@ -1,42 +1,35 @@
 # Sync check
 
-Stuart Houlihan. Run 23 October 2026, 18:21.
+Stuart Houlihan. Run 23 October 2026, 18:48.
 
 Each evening the Mac compares every project folder with GitHub, brings a folder up to date when that is safe, and writes this page. It never deletes, merges or sends code. [STATUS.md](STATUS.md) is the longer account of where each app stands, last updated 23 October 2026, 12:05 (Guernsey).
 
 ## Needs you
 
-- **Desktop/cairn** is on branch claude/project-thread-zjslm7, which is already merged; GitHub's main is 4 commits newer.
 - **Desktop/Claude project files/Cairn/cairn-app** has 1 changed file not saved to GitHub.
-- **Desktop/Claude project files/mull-watch-build** is on branch claude/project-thread-pd8soh, which is already merged; GitHub's claude/project-thread-ni92pc is 1 commit newer.
 - **Desktop/coaching-studio** has 1 changed file not saved to GitHub.
 - **Desktop/regulate** has 1 commit on branch reset-merge-check that are not on GitHub.
 - **regulate #39** is a draft pull request; it should be marked ready for review.
 - **regulate #38** is a draft pull request; it should be marked ready for review.
 - **STATUS.md** has not been updated since changes reached GitHub in: cairn, content-engine, head-untangled-kit, liferegulationlab-site.
 
-## Brought up to date tonight
-
-- Desktop/Claude project files/liferegulationlab-site: 2 new commits from GitHub.
-- Desktop/content-engine: 3 new commits from GitHub.
-
 ## Every folder
 
 | Folder | Repo | Branch | State | Changed / new files | Last commit |
 | --- | --- | --- | --- | --- | --- |
-| Desktop/cairn | cairn | claude/project-thread-zjslm7 | level with GitHub | 0 / 1 | 18 Oct |
+| Desktop/cairn | cairn | main | level with GitHub | 0 / 1 | 23 Oct |
 | Desktop/Claude project files/Cairn/cairn-app | cairn | main | level with GitHub | 1 / 1 | 23 Oct |
 | Desktop/Claude project files/dashboards | dashboards | main | level with GitHub | 0 / 0 | 17 Oct |
 | Desktop/Claude project files/desk-store | desk | main | level with GitHub | 0 / 1 | 23 Oct |
 | Desktop/Claude project files/headuntangled-site | headuntangled-site | main | level with GitHub | 0 / 0 | 14 Oct |
-| Desktop/Claude project files/liferegulationlab-site | liferegulationlab-site | master | brought up to date (2) | 0 / 0 | 23 Oct |
+| Desktop/Claude project files/liferegulationlab-site | liferegulationlab-site | master | level with GitHub | 0 / 0 | 23 Oct |
 | Desktop/Claude project files/mull | mull | claude/project-thread-ni92pc | level with GitHub | 0 / 0 | 23 Oct |
-| Desktop/Claude project files/mull-watch-build | mull | claude/project-thread-pd8soh | level with GitHub | 0 / 3 | 23 Oct |
+| Desktop/Claude project files/mull-watch-build | mull | claude/project-thread-ni92pc | level with GitHub | 0 / 3 | 23 Oct |
 | Desktop/Claude project files/pace/pace | pace | main | level with GitHub | 0 / 0 | 23 Oct |
 | Desktop/Claude project files/Voice Studio | voice-studio | claude/project-thread-2529dx | level with GitHub | 0 / 0 | 15 Oct |
 | Desktop/claude-mods | claude-mods | main | level with GitHub | 0 / 0 | 14 Oct |
 | Desktop/coaching-studio | coaching-studio | claude/project-thread-ni92pc | level with GitHub | 1 / 1 | 23 Oct |
-| Desktop/content-engine | content-engine | main | brought up to date (3) | 0 / 1 | 20 Oct |
+| Desktop/content-engine | content-engine | main | level with GitHub | 0 / 1 | 23 Oct |
 | Desktop/Projects/Head-Untangled | head-untangled-kit | main | level with GitHub | 0 / 0 | 23 Oct |
 | Desktop/regulate | regulate | claude/store-plus | level with GitHub | 0 / 1 | 13 Oct |
 | Desktop/regulate-testflight | regulate | HEAD | fixed copy, not on a branch | 0 / 2 | 23 Oct |
