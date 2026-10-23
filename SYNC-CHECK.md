@@ -1,14 +1,16 @@
 # Sync check
 
-Stuart Houlihan. Run 23 October 2026, 18:48.
+Stuart Houlihan. Run 23 October 2026, 21:00.
 
-Each evening the Mac compares every project folder with GitHub, brings a folder up to date when that is safe, and writes this page. It never deletes, merges or sends code. [STATUS.md](STATUS.md) is the longer account of where each app stands, last updated 23 October 2026, 12:05 (Guernsey).
+Each evening the Mac compares every project folder with GitHub, brings a folder up to date when that is safe, and writes this page. It never deletes, merges or sends code. [STATUS.md](STATUS.md) is the longer account of where each app stands, last updated 23 October 2026, 19:45 (Guernsey).
 
 ## Needs you
 
 - **Desktop/Claude project files/Cairn/cairn-app** has 1 changed file not saved to GitHub.
 - **Desktop/coaching-studio** has 1 changed file not saved to GitHub.
+- **Desktop/Projects/Head-Untangled** has 1 changed file not saved to GitHub.
 - **Desktop/regulate** has 1 commit on branch reset-merge-check that are not on GitHub.
+- **~/all-projects** has 1 changed file not saved to GitHub, and is 2 commits behind GitHub.
 - **regulate #39** is a draft pull request; it should be marked ready for review.
 - **regulate #38** is a draft pull request; it should be marked ready for review.
 - **STATUS.md** has not been updated since changes reached GitHub in: cairn, content-engine, head-untangled-kit, liferegulationlab-site.
@@ -30,10 +32,10 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 | Desktop/claude-mods | claude-mods | main | level with GitHub | 0 / 0 | 14 Oct |
 | Desktop/coaching-studio | coaching-studio | claude/project-thread-ni92pc | level with GitHub | 1 / 1 | 23 Oct |
 | Desktop/content-engine | content-engine | main | level with GitHub | 0 / 1 | 23 Oct |
-| Desktop/Projects/Head-Untangled | head-untangled-kit | main | level with GitHub | 0 / 0 | 23 Oct |
+| Desktop/Projects/Head-Untangled | head-untangled-kit | main | level with GitHub | 1 / 2 | 23 Oct |
 | Desktop/regulate | regulate | claude/store-plus | level with GitHub | 0 / 1 | 13 Oct |
 | Desktop/regulate-testflight | regulate | HEAD | fixed copy, not on a branch | 0 / 2 | 23 Oct |
-| ~/all-projects | all-projects | main | level with GitHub | 0 / 0 | 23 Oct |
+| ~/all-projects | all-projects | main | 2 behind | 1 / 0 | 23 Oct |
 
 Notes:
 
@@ -76,7 +78,8 @@ Desktop and Documents sync is off, so iCloud does not hold a copy of the Desktop
 
 Changed in iCloud Drive in the last day. If any of this belongs to a project, it should also be in that project's folder:
 
-- PACE 2 (23 Oct 11:10)
+- Downloads (23 Oct 20:53)
+- PACE 2 (23 Oct 20:23)
 - PACE (23 Oct 06:56)
 
 ## Google Drive
