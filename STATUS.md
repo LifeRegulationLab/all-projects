@@ -64,6 +64,6 @@ Merged today: Pace #5 and #6, Mull #1, Desk #7, #8 and #9, Regulate #53 and #54,
 | Claude project files/headuntangled-site | headuntangled-site, main | Up to date. |
 | Claude project files/liferegulationlab-site | liferegulationlab-site, master | Up to date. |
 
-Waiting in Desktop/_to_delete for Stuart to bin: regulate-cycle (old cycle copy; its work is in main) and cairn-copy-leftovers (empty files from an interrupted copy on 9 October). Old Pace builds (about 13 GB) are in Claude project files/pace/build/_to_delete.
+Waiting in Desktop/_to_delete for Stuart to bin: regulate-cycle (old cycle copy; its work is in main) and cairn-copy-leftovers (empty files from an interrupted copy on 9 October). Old Pace builds (about 14 GB) are in Claude project files/pace/build/_to_delete.
 
 Not on the Mac: formulationassistant-site (no change since April).
