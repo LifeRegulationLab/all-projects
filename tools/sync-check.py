@@ -43,7 +43,7 @@ CLOUD_STORAGE = os.path.join(HOME, "Library", "CloudStorage")
 # and so are build output and anything waiting to be binned.
 BACKUP_SOURCE = os.path.join(HOME, "Desktop", "Claude project files")
 BACKUP_FOLDER = "Mac backup"
-BACKUP_SKIP = ["_to_delete", "build", "DerivedData", "node_modules", "Pods", ".build", ".DS_Store"]
+BACKUP_SKIP = ["Tautenay and HSC", "_to_delete", "build", "DerivedData", "node_modules", "Pods", ".build", ".DS_Store"]
 
 # launchd starts with a bare PATH; gh lives under Homebrew.
 os.environ["PATH"] = "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:" + os.environ.get("PATH", "")
@@ -303,7 +303,7 @@ def drive_backup(drive, repos):
     code, _, err = run(args, timeout=3 * 3600)
     if code != 0:
         return "The copy to Google Drive did not finish (%s)." % (err.splitlines()[-1] if err else "no reason given"), False
-    return "Copied %s to Google Drive, My Drive/%s (git folders and build output left out, as GitHub holds the code)." % (short(BACKUP_SOURCE), BACKUP_FOLDER), True
+    return "Copied %s to Google Drive, My Drive/%s (git folders, build output and the Tautenay and HSC folder left out)." % (short(BACKUP_SOURCE), BACKUP_FOLDER), True
 
 
 def status_updated():
