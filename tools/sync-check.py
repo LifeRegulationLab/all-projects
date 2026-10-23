@@ -455,7 +455,7 @@ def main():
 
     if denied or any(e and "did not allow" in e for e in (icloud_error, gdrive_error)):
         w.append("## Note\n")
-        w.append("macOS asks before a background task reads the Desktop, iCloud Drive or Google Drive. If folders are missing above, open System Settings, Privacy and Security, Full Disk Access, and switch on python3.\n")
+        w.append("macOS asks before a background task reads the Desktop, iCloud Drive or Google Drive. If folders are missing above, open System Settings, Privacy and Security, Files and Folders, and switch on everything under Sync Check.\n")
 
     with open(REPORT, "w", encoding="utf-8") as f:
         f.write("\n".join(w).rstrip() + "\n")
