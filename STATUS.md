@@ -1,6 +1,6 @@
 # Where each project stands
 
-Stuart Houlihan. Last updated 23 October 2026, 12:00 (Guernsey).
+Stuart Houlihan. Last updated 23 October 2026, 12:15 (Guernsey).
 
 Checked against GitHub, App Store Connect notes from today and the folders on the Mac. Update this file at the end of any sitting that changes a build, a pull request or a TestFlight group.
 
@@ -48,17 +48,22 @@ Merged today: Pace #5 and #6, Mull #1, Desk #7, #8 and #9, Regulate #53 and #54,
 
 | Folder | Repo | State on 23 October |
 | --- | --- | --- |
-| Desktop/regulate | regulate, claude/store-plus | Up to date. Local changes left alone: strings.xml, brand files. |
+| Desktop/regulate | regulate, claude/store-plus | Up to date and clean. Brand files moved to Claude project files/Regulate/brand. |
 | Desktop/regulate-testflight | regulate, main at #54 (detached) | Used for Regulate 0.1.0 (3). Build output untracked. |
-| Desktop/regulate-cycle | regulate (detached, 12 October) | Old cycle work with local changes. Left alone. |
-| Desktop/coaching-studio | coaching-studio, claude/project-thread-ni92pc | Up to date. Xcode package changes left alone. |
-| Desktop/cairn | cairn, claude/project-thread-zjslm7 | Up to date. Many untracked .cptmp copy files and a Claude outputs folder left alone. |
-| Desktop/content-engine | content-engine, main | Pulled to match GitHub. |
-| Desktop/claude-mods | claude-mods, main | Pulled to match GitHub. |
-| Claude project files/desk-store | Desk, main | Pulled to match GitHub (#9). |
-| Claude project files/mull | mull, claude/project-thread-ni92pc | Pulled to match GitHub (watch app). |
+| Desktop/coaching-studio | coaching-studio, claude/project-thread-ni92pc | Up to date. Xcode raised the minimum iOS to 17; save that with the next Head Untangled build. |
+| Desktop/cairn | cairn, claude/project-thread-zjslm7 | Up to date. Claude outputs folder untracked. |
+| Desktop/content-engine | content-engine, main | Up to date. |
+| Desktop/claude-mods | claude-mods, main | Up to date. |
+| Claude project files/desk-store | Desk, main | Up to date. |
+| Claude project files/mull | mull, claude/project-thread-ni92pc | Up to date (watch app). |
 | Claude project files/mull-watch-build | mull, claude/project-thread-pd8soh | Merged branch; build logs only. |
 | Claude project files/Voice Studio | voice-studio, claude/project-thread-2529dx | Up to date. |
-| Claude project files/pace/build | pace, several copies | Build snapshots named after commits. None is on current main; pace-75e96d1 is 30 commits behind. |
+| Claude project files/pace/pace | pace, main | Current Pace code. Use this for new Pace builds. |
+| Claude project files/pace/build | pace | Archives, plus pace-0.2 and pace-watch-6bf853d (the copies behind builds 4 and 5). |
+| Claude project files/dashboards | dashboards, main | Up to date. |
+| Claude project files/headuntangled-site | headuntangled-site, main | Up to date. |
+| Claude project files/liferegulationlab-site | liferegulationlab-site, master | Up to date. |
 
-No local copy: dashboards, headuntangled-site, liferegulationlab-site, formulationassistant-site.
+Waiting in Desktop/_to_delete for Stuart to bin: regulate-cycle (old cycle copy; its work is in main) and cairn-copy-leftovers (empty files from an interrupted copy on 9 October). Old Pace builds (about 13 GB) are in Claude project files/pace/build/_to_delete.
+
+Not on the Mac: formulationassistant-site (no change since April).
