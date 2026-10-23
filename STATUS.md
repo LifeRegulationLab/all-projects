@@ -1,6 +1,6 @@
 # Where each project stands
 
-Stuart Houlihan. Last updated 23 October 2026, 12:15 (Guernsey).
+Stuart Houlihan. Last updated 23 October 2026, 12:05 (Guernsey).
 
 Checked against GitHub, App Store Connect notes from today and the folders on the Mac. Update this file at the end of any sitting that changes a build, a pull request or a TestFlight group.
 
@@ -18,7 +18,7 @@ All under team PCA5FZ26HM. "Testers" is the external group (Apple reviews each n
 | Mull | 1.0 (3), with the Apple Watch app | 1.0 (3) in Testers, Waiting for Review. Review sign-in: review@liferegulationlab.com. | mull, claude/project-thread-ni92pc (the repo's default; there is no main yet) | none |
 | Desk | iOS and macOS 1.0.0 (2); iOS 1.0.0 (3) with the icon fix | iOS 1.0.0 (2) in Testers, Waiting for Review. iOS 1.0.0 (3) cannot join Testers until build 2 is approved. | Desk, main | none |
 | Regulate | 0.1.0 (3), with Reset and the iPhone fixes | Internal only ("Me" group). Not for outside testers. | regulate, main | #37 Coming soon; #38 and #39 drafts (phone sign-in, RevenueCat); #40 transfers wording |
-| Head Untangled app | 1.0 (3) | Uploaded 23 October. Check which group holds it. | coaching-studio, claude/project-thread-ni92pc | #5 Resets |
+| Head Untangled app | 1.0 (3) | Builds 1.0 (1), (2) and (3) are in the internal group "Test" only (1 tester). No external group yet. | coaching-studio, claude/project-thread-ni92pc | #5 Resets |
 
 Merged today: Pace #5 and #6, Mull #1, Desk #7, #8 and #9, Regulate #53 and #54, liferegulationlab-site #9 and #10.
 
@@ -28,7 +28,7 @@ Merged today: Pace #5 and #6, Mull #1, Desk #7, #8 and #9, Regulate #53 and #54,
 2. **Mull:** when Apple approves 1.0 (3), testers get it. Try the watch app. Still to build: subscriptions (needs the Paid Apps Agreement). Next upload must be build 4 or higher.
 3. **Desk:** when Apple approves iOS 1.0.0 (2), add iOS 1.0.0 (3) to Testers, then add macOS 1.0.0 (2) to the same group.
 4. **Regulate:** stays closed to new accounts. Open privacy and data protection actions are in the Regulate status note (Claude project files/Regulate/Regulate-Status.md).
-5. **Head Untangled app:** confirm the group for 1.0 (3); decide on PR #5 (Resets).
+5. **Head Untangled app:** build 1.0 (3) is ready in TestFlight for Stuart. An external "Testers" group (with Test Information and Apple's review) is needed before anyone else can try it. Decide on PR #5 (Resets).
 
 ## Other projects
 
