@@ -28,14 +28,14 @@ Merged today: Pace #5 and #6, Mull #1, Desk #7, #8 and #9, Regulate #53 and #54,
 2. **Mull:** when Apple approves 1.0 (3), testers get it. Try the watch app. Still to build: subscriptions (needs the Paid Apps Agreement). Next upload must be build 4 or higher.
 3. **Desk:** when Apple approves iOS 1.0.0 (2), add iOS 1.0.0 (3) to Testers, then add macOS 1.0.0 (2) to the same group.
 4. **Regulate:** stays closed to new accounts. Open privacy and data protection actions are in the Regulate status note (Claude project files/Regulate/Regulate-Status.md).
-5. **Head Untangled app:** when Apple approves 1.0 (3), TestFlight emails the invitation. Merge site PR #11 (privacy section for the app). Decide on PR #5 (Resets).
+5. **Head Untangled app:** when Apple approves 1.0 (3), TestFlight emails the invitation. Decide on PR #5 (Resets).
 
 ## Other projects
 
 | Project | Where it is | State |
 | --- | --- | --- |
 | Cairn | cairn, branch claude/project-thread-zjslm7 | PR #1 (DPIA pack for the hosted service) open. Last change 18 October. |
-| liferegulationlab.com | liferegulationlab-site, master | Privacy page covers Pace, Mull and Desk (PRs #9, #10). PR #11 (Head Untangled app) waiting for Stuart to merge. |
+| liferegulationlab.com | liferegulationlab-site, master | Privacy page covers Pace, Mull and Desk (PRs #9, #10). Head Untangled app added (PR #11, merged). |
 | headuntangled.com | headuntangled-site, main | PR #1 (courses page and email address) open. |
 | Voice Studio | voice-studio | Working; no change since 15 October. |
 | Content engine | content-engine, main | Last change 20 October. |
