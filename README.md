@@ -4,6 +4,8 @@ Index of Life Regulation Lab projects. Link this repo in a conversation to give 
 
 Where each project stands (builds, TestFlight, open pull requests, next steps) is in [STATUS.md](STATUS.md).
 
+[SYNC-CHECK.md](SYNC-CHECK.md) is written by the Mac every evening at 21:00: it compares every project folder with GitHub, brings a folder up to date when that is safe, and lists only what is out of step. The check is `tools/sync-check.py`; `tools/install-sync-check.sh` sets the evening run (add `--remove` to stop it). It never deletes, merges or sends code; the only thing it sends to GitHub is SYNC-CHECK.md.
+
 | Repo | What it is |
 | --- | --- |
 | [regulate](https://github.com/LifeRegulationLab/regulate) | Regulate: capacity-aware app for late-diagnosed neurodivergent adults. |
