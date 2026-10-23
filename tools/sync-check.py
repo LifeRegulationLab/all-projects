@@ -3,7 +3,8 @@
 
 Looks at every git folder on the Mac, compares it with GitHub, brings a
 folder up to date only when that is safe (no changed files, nothing of its
-own to merge), and writes SYNC-CHECK.md in this repo. It never deletes,
+own to merge), copies the project files folder into Google Drive, and
+writes SYNC-CHECK.md in this repo. It never deletes,
 pushes code, merges or changes a branch. The only thing it pushes is
 SYNC-CHECK.md itself.
 
@@ -36,6 +37,13 @@ SKIP_NAMES = {
     "dist", ".next", "venv", ".venv", "__pycache__", "Library",
 }
 ICLOUD = os.path.join(HOME, "Library", "Mobile Documents", "com~apple~CloudDocs")
+CLOUD_STORAGE = os.path.join(HOME, "Library", "CloudStorage")
+
+# Copied to Google Drive each evening. Git folders inside are left out (GitHub holds them),
+# and so are build output and anything waiting to be binned.
+BACKUP_SOURCE = os.path.join(HOME, "Desktop", "Claude project files")
+BACKUP_FOLDER = "Mac backup"
+BACKUP_SKIP = ["_to_delete", "build", "DerivedData", "node_modules", "Pods", ".build", ".DS_Store"]
 
 # launchd starts with a bare PATH; gh lives under Homebrew.
 os.environ["PATH"] = "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:" + os.environ.get("PATH", "")
@@ -231,16 +239,16 @@ def github_overview(local_remotes):
             "pr_error": None if code == 0 else "Could not list pull requests."}, None
 
 
-def icloud_changes(since):
-    if not os.path.isdir(ICLOUD):
-        return None, "iCloud Drive folder not found."
+def cloud_changes(root, label, since, skip=()):
+    if not root or not os.path.isdir(root):
+        return None, "%s folder not found." % label
     out = []
     try:
-        entries = list(os.scandir(ICLOUD))
+        entries = list(os.scandir(root))
     except PermissionError:
-        return None, "The Mac did not allow the check to read iCloud Drive (see the note at the end)." 
+        return None, "The Mac did not allow the check to read %s (see the note at the end)." % label
     for e in entries:
-        if e.name.startswith("."):
+        if e.name.startswith(".") or e.name in skip:
             continue
         newest = 0.0
         try:
@@ -260,6 +268,42 @@ def icloud_changes(since):
         if newest >= since:
             out.append((e.name, datetime.datetime.fromtimestamp(newest)))
     return sorted(out, key=lambda x: x[1], reverse=True), None
+
+
+def drive_root():
+    try:
+        accounts = sorted(d for d in os.listdir(CLOUD_STORAGE) if d.startswith("GoogleDrive-"))
+    except OSError:
+        return None
+    for d in accounts:
+        mine = os.path.join(CLOUD_STORAGE, d, "My Drive")
+        if os.path.isdir(mine):
+            return mine
+    return None
+
+
+def drive_backup(drive, repos):
+    """One-way copy of the project files folder into Google Drive. Never removes anything."""
+    if not drive:
+        return "Google Drive is not signed in on the Mac, so tonight's copy was skipped.", False
+    if not os.path.isdir(BACKUP_SOURCE):
+        return "%s not found, so tonight's copy was skipped." % short(BACKUP_SOURCE), False
+    target = os.path.join(drive, BACKUP_FOLDER, os.path.basename(BACKUP_SOURCE))
+    try:
+        os.makedirs(target, exist_ok=True)
+    except OSError as e:
+        return "Could not make the backup folder in Google Drive (%s)." % e, False
+    args = ["rsync", "-a"]
+    for name in BACKUP_SKIP:
+        args += ["--exclude", name]
+    for r in repos:
+        if r.startswith(BACKUP_SOURCE + os.sep):
+            args += ["--exclude", "/" + os.path.relpath(r, BACKUP_SOURCE)]
+    args += [BACKUP_SOURCE + "/", target + "/"]
+    code, _, err = run(args, timeout=3 * 3600)
+    if code != 0:
+        return "The copy to Google Drive did not finish (%s)." % (err.splitlines()[-1] if err else "no reason given"), False
+    return "Copied %s to Google Drive, My Drive/%s (git folders and build output left out, as GitHub holds the code)." % (short(BACKUP_SOURCE), BACKUP_FOLDER), True
 
 
 def status_updated():
@@ -295,7 +339,11 @@ def main():
         if r.get("remote"):
             by_remote.setdefault(r["remote"].lower(), []).append(r["label"])
     gh, gh_error = github_overview(set(by_remote))
-    icloud, icloud_error = icloud_changes((now - datetime.timedelta(days=1)).timestamp())
+    day_ago = (now - datetime.timedelta(days=1)).timestamp()
+    icloud, icloud_error = cloud_changes(ICLOUD, "iCloud Drive", day_ago)
+    drive = drive_root()
+    backup_line, backup_ok = drive_backup(drive, repos) if update else ("Copy to Google Drive skipped (report only).", True)
+    gdrive, gdrive_error = cloud_changes(drive, "Google Drive", day_ago, skip=(BACKUP_FOLDER,))
 
     needs = []
     for r in results:
@@ -305,6 +353,8 @@ def main():
         for p in gh["prs"]:
             if p.get("isDraft"):
                 needs.append("**%s #%d** is a draft pull request; it should be marked ready for review." % (p["repository"]["name"], p["number"]))
+    if not backup_ok:
+        needs.append(backup_line)
     if denied:
         needs.append("The Mac did not let the check read: %s (see the note at the end)." % ", ".join(short(d) for d in denied))
     status_line = status_updated()
@@ -391,9 +441,21 @@ def main():
     else:
         w.append("Nothing changed in iCloud Drive in the last day.\n")
 
-    if denied or (icloud_error and "did not allow" in icloud_error):
+    w.append("## Google Drive\n")
+    w.append(backup_line + "\n")
+    if gdrive_error:
+        w.append(gdrive_error + "\n")
+    elif gdrive:
+        w.append("Changed in Google Drive in the last day, apart from the backup. If any of this belongs to a project, it should also be in that project's folder:\n")
+        for name, when in gdrive:
+            w.append("- %s (%s)" % (name, when.strftime("%d %b %H:%M")))
+        w.append("")
+    else:
+        w.append("Nothing else changed in Google Drive in the last day.\n")
+
+    if denied or any(e and "did not allow" in e for e in (icloud_error, gdrive_error)):
         w.append("## Note\n")
-        w.append("macOS asks before a background task reads the Desktop or iCloud Drive. If folders are missing above, open System Settings, Privacy and Security, Full Disk Access, and switch on python3.\n")
+        w.append("macOS asks before a background task reads the Desktop, iCloud Drive or Google Drive. If folders are missing above, open System Settings, Privacy and Security, Full Disk Access, and switch on python3.\n")
 
     with open(REPORT, "w", encoding="utf-8") as f:
         f.write("\n".join(w).rstrip() + "\n")
