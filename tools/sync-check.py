@@ -204,7 +204,10 @@ def check_repo(path, update):
                 continue
             _, n, _ = git(path, "rev-list", "--count", b, "--not", "--remotes")
             if n.isdigit() and int(n):
-                r["needs"].append("has %s commit%s on branch %s that are not on GitHub" % (n, "" if n == "1" else "s", b))
+                # nothing to lose if the branch holds exactly what GitHub's main line holds
+                if default and git(path, "diff", "--quiet", "origin/" + r["default"], b)[0] == 0:
+                    continue
+                r["needs"].append("has %s commit%s on branch %s that %s not on GitHub" % (n, "" if n == "1" else "s", b, "is" if n == "1" else "are"))
 
         # working branch compared with the main line on GitHub
         if default and branch != r["default"]:
