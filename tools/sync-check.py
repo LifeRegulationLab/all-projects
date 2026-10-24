@@ -420,7 +420,7 @@ def main():
     if gh and not gh_error:
         _, status_commit, _ = git(REPO_DIR, "log", "-1", "--format=%cI", "--", "STATUS.md")
         if status_commit:
-            since = datetime.datetime.fromisoformat(status_commit).astimezone(datetime.timezone.utc)
+            since = datetime.datetime.fromisoformat(status_commit.replace("Z", "+00:00")).astimezone(datetime.timezone.utc)
             later = []
             for name, when in gh["pushed"].items():
                 if name.lower() == "all-projects" or not when:
