@@ -1,6 +1,6 @@
 # Where each project stands
 
-Stuart Houlihan. Last updated 23 October 2026, 18:55 (Guernsey).
+Stuart Houlihan. Last updated 23 October 2026, 19:45 (Guernsey).
 
 Checked against GitHub, App Store Connect notes from today and the folders on the Mac. Update this file at the end of any sitting that changes a build, a pull request or a TestFlight group. The Mac's evening check, [SYNC-CHECK.md](SYNC-CHECK.md), compares every folder with GitHub at 21:00 each day and says when this file has fallen behind.
 
@@ -14,23 +14,23 @@ All under team PCA5FZ26HM. "Testers" is the external group (Apple reviews each n
 
 | App | Newest build | TestFlight | Repo and branch | Open PRs |
 | --- | --- | --- | --- | --- |
-| Pace | 0.2 (6), the Apple Watch build | 0.2 (5) in Testers, Waiting for Review. 0.2 (6) in Internal, so Stuart has it now. | pace, main | #2 Share with Coach |
-| Mull | 1.0 (3), with the Apple Watch app | 1.0 (3) in Testers, Waiting for Review. Review sign-in: review@liferegulationlab.com. | mull, claude/project-thread-ni92pc (the repo's default; there is no main yet) | none |
-| Desk | iOS and macOS 1.0.0 (2); iOS 1.0.0 (3) with the icon fix | iOS 1.0.0 (2) in Testers, Waiting for Review. iOS 1.0.0 (3) cannot join Testers until build 2 is approved. | Desk, main | none |
+| Pace | 0.2 (6), the Apple Watch build | Approved. 0.1 (1), 0.2 (5) and 0.2 (6) all Testing in Testers (23 Oct evening). | pace, main | #2 Share with Coach |
+| Mull | 1.0 (3), with the Apple Watch app | Approved. 1.0 (3) Testing in Testers. Review sign-in: review@liferegulationlab.com. | mull, claude/project-thread-ni92pc (the repo's default; there is no main yet) | none |
+| Desk | iOS and macOS 1.0.0 (2); iOS 1.0.0 (3) with the icon fix | Approved. iOS 1.0.0 (2), iOS 1.0.0 (3) and macOS 1.0.0 (2) all Testing in Testers. | Desk, main | none |
 | Regulate | 0.1.0 (3), with Reset and the iPhone fixes | Internal only ("Me" group). Not for outside testers. | regulate, main | #37 Coming soon; #38 and #39 drafts (phone sign-in, RevenueCat); #40 transfers wording |
-| Cairn | 1.0 (1), uploaded 23 October 12:29 | Processing on 23 October; no TestFlight groups yet. | cairn, main | none |
-| Head Untangled app | 1.0 (3) | 1.0 (3) in "Testers" (external, new), Waiting for Review. Also in internal "Test". | coaching-studio, claude/project-thread-ni92pc | #5 Resets |
+| Cairn | 1.0 (1), uploaded 23 October 12:29 | Submitted 23 Oct evening to the external "Testers" group, Waiting for Review. | cairn, main | #1 DPIA pack |
+| Head Untangled app | 1.0 (3) | Approved. 1.0 (3) Testing in "Testers". Also in internal "Test". | coaching-studio, claude/project-thread-ni92pc | #5 Resets |
 
 Merged today: Pace #5 and #6, Mull #1, Desk #7, #8 and #9, Regulate #53 and #54, Cairn #8 (iPhone and iPad app, Delete my account), liferegulationlab-site #9, #10, #11 and #12, all-projects #3, #4 and #5 (the evening sync check).
 
 ### Next steps
 
-1. **Pace:** when Apple approves 0.2 (5), add 0.2 (6) to Testers and press Submit for Review. Try the watch app on a real watch. Next upload must be build 7 or higher.
-2. **Mull:** when Apple approves 1.0 (3), testers get it. Try the watch app. Still to build: subscriptions (needs the Paid Apps Agreement). Next upload must be build 4 or higher.
-3. **Desk:** when Apple approves iOS 1.0.0 (2), add iOS 1.0.0 (3) to Testers, then add macOS 1.0.0 (2) to the same group.
-4. **Regulate:** stays closed to new accounts. Open privacy and data protection actions are in the Regulate status note (Claude project files/Regulate/Regulate-Status.md).
-5. **Head Untangled app:** when Apple approves 1.0 (3), TestFlight emails the invitation. Decide on PR #5 (Resets).
-6. **Cairn:** invite review@liferegulationlab.com as Staff on app.cairncare.app and set its password; once build 1 has processed, run the TestFlight Chrome prompt (project files, cairn/chrome-prompt-testflight-v1.md). Next upload must be build 2 or higher.
+1. **Cairn:** wait for Beta App Review of 1.0 (1). If Apple asks for a demo login, finish the review@liferegulationlab.com account in Willow House and add it to the Test Information. Next upload must be build 2 or higher.
+2. **Pace:** try the watch app on a real watch. Check the 0.2 (6) What to Test text (written as a guess). Next upload must be build 7 or higher.
+3. **Mull:** try the watch app. Subscriptions still need the Paid Apps Agreement. Next upload must be build 4 or higher.
+4. **Desk:** nothing waiting.
+5. **Regulate:** stays closed to new accounts. Open privacy and data protection actions are in the Regulate status note (Claude project files/Regulate/Regulate-Status.md).
+6. **Head Untangled app:** testers have 1.0 (3). Decide on PR #5 (Resets).
 
 ## Other projects
 

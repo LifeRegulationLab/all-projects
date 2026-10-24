@@ -22,6 +22,7 @@ import os
 import shutil
 import subprocess
 import sys
+import tempfile
 
 HOME = os.path.expanduser("~")
 REPO_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -325,6 +326,61 @@ def notify(text):
     run(["osascript", "-e", 'display notification "%s" with title "Sync check"' % safe], timeout=20)
 
 
+def unsaved_edits():
+    """Changed files in this repo other than the report itself."""
+    _, out, _ = git(REPO_DIR, "status", "--porcelain", "--untracked-files=no")
+    return [l for l in out.splitlines() if l.strip() and not l.endswith("SYNC-CHECK.md")]
+
+
+def refresh_self():
+    """Bring this repo level with GitHub. An unsaved edit (such as STATUS.md) is never touched."""
+    git(REPO_DIR, "checkout", "--", "SYNC-CHECK.md")
+    if unsaved_edits():
+        git(REPO_DIR, "fetch", "--quiet", timeout=180)
+        return
+    code, _, err = git(REPO_DIR, "pull", "--rebase", "--quiet", timeout=180)
+    if code != 0:
+        git(REPO_DIR, "rebase", "--abort")
+        print("Could not bring all-projects up to date: %s" % err)
+
+
+def send_report(message):
+    """Commit SYNC-CHECK.md and push it. Returns an error message, or None."""
+    if not unsaved_edits():
+        git(REPO_DIR, "add", "SYNC-CHECK.md")
+        code, _, _ = git(REPO_DIR, "diff", "--cached", "--quiet", "--", "SYNC-CHECK.md")
+        if code == 0:
+            return None
+        git(REPO_DIR, "commit", "--quiet", "-m", message, "--", "SYNC-CHECK.md")
+        code, _, err = git(REPO_DIR, "pull", "--rebase", "--quiet", timeout=180)
+        if code != 0:
+            git(REPO_DIR, "rebase", "--abort")
+            return err or "could not catch up with GitHub"
+        code, _, err = git(REPO_DIR, "push", "--quiet", timeout=180)
+        return None if code == 0 else (err or "push refused")
+    # Someone has an unsaved edit here: commit the report in a separate copy so the edit stays as it is.
+    code, upstream, _ = git(REPO_DIR, "rev-parse", "--abbrev-ref", "@{u}")
+    if code != 0 or "/" not in upstream:
+        return "no upstream branch"
+    remote, branch = upstream.split("/", 1)
+    git(REPO_DIR, "fetch", "--quiet", remote, timeout=180)
+    tmp = tempfile.mkdtemp(prefix="sync-check-")
+    try:
+        code, _, err = git(REPO_DIR, "worktree", "add", "--quiet", "--detach", tmp, upstream)
+        if code != 0:
+            return err or "could not make a working copy"
+        shutil.copyfile(REPORT, os.path.join(tmp, "SYNC-CHECK.md"))
+        code, _, _ = git(tmp, "diff", "--quiet", "--", "SYNC-CHECK.md")
+        if code == 0:
+            return None
+        git(tmp, "commit", "--quiet", "-m", message, "--", "SYNC-CHECK.md")
+        code, _, err = git(tmp, "push", "--quiet", remote, "HEAD:" + branch, timeout=180)
+        return None if code == 0 else (err or "push refused")
+    finally:
+        git(REPO_DIR, "worktree", "remove", "--force", tmp)
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
 def main():
     args = set(sys.argv[1:])
     update = "--no-update" not in args
@@ -332,7 +388,7 @@ def main():
 
     # keep this repo current first, so the report lands on top of the latest STATUS.md
     if update:
-        git(REPO_DIR, "pull", "--ff-only", "--quiet", timeout=180)
+        refresh_self()
 
     repos, denied = find_repos()
     results = [check_repo(p, update) for p in repos]
@@ -463,15 +519,16 @@ def main():
     with open(REPORT, "w", encoding="utf-8") as f:
         f.write("\n".join(w).rstrip() + "\n")
 
+    push_error = None
     if "--no-push" not in args:
-        git(REPO_DIR, "add", "SYNC-CHECK.md")
-        code, _, _ = git(REPO_DIR, "diff", "--cached", "--quiet", "--", "SYNC-CHECK.md")
-        if code != 0:
-            git(REPO_DIR, "commit", "--quiet", "-m", "Sync check %s" % now.strftime("%d %b %Y"), "--", "SYNC-CHECK.md")
-            git(REPO_DIR, "push", "--quiet", timeout=180)
+        push_error = send_report("Sync check %s" % now.strftime("%d %b %Y"))
+        if push_error:
+            print("Could not send SYNC-CHECK.md to GitHub: %s" % push_error)
 
     if "--no-notify" not in args:
-        if needs:
+        if push_error:
+            notify("The report was written on the Mac but could not be sent to GitHub. See ~/Library/Logs/sync-check.log.")
+        elif needs:
             notify("%d thing%s need%s you. Open SYNC-CHECK.md in all-projects." % (len(needs), "" if len(needs) == 1 else "s", "s" if len(needs) == 1 else ""))
         else:
             notify("All project folders are level with GitHub.")
