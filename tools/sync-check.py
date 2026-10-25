@@ -4,7 +4,7 @@
 Looks at every git folder on the Mac, compares it with GitHub, brings a
 folder up to date only when that is safe (no changed files, nothing of its
 own to merge), copies the project files folder into Google Drive, copies the Head
-Untangled media into Cloudflare R2 and brings down what cloud sessions saved
+Untangled kit and the project files folder into Cloudflare R2 and brings down what cloud sessions saved
 there, and writes SYNC-CHECK.md in this repo. It never deletes,
 pushes code, merges or changes a branch. The only thing it pushes is
 SYNC-CHECK.md itself.
@@ -47,16 +47,20 @@ BACKUP_SOURCE = os.path.join(HOME, "Desktop", "Claude project files")
 BACKUP_FOLDER = "Mac backup"
 BACKUP_SKIP = ["Tautenay and HSC", "_to_delete", "build", "DerivedData", "node_modules", "Pods", ".build", ".DS_Store"]
 
-# Copied to Cloudflare R2 each evening so cloud sessions can reach it without the Mac.
-# Only video, audio and pictures go; the words are in GitHub. rclone's remote "r2" is set up once by hand.
-MEDIA_SOURCE = os.path.join(HOME, "Desktop", "Projects", "Head-Untangled")
-MEDIA_TARGET = "r2:lrl-media/Head-Untangled"
-MEDIA_FILTER = [
-    "- .git/**", "- node_modules/**", "- .venv/**", "- venv/**",
-    "- _to_delete/**", "- _old-parts/**", "- _parts/**", "- archive/**", "- _retired-do-not-use/**",
+# Copied to Cloudflare R2 each evening so cloud sessions can reach every project file without the Mac.
+# Git folders inside are left out (GitHub holds them). rclone's remote "r2" is set up once by hand.
+R2_COPIES = [
+    # source, target, extra rules (the kit's archive is retired material that never travels)
+    (os.path.join(HOME, "Desktop", "Projects", "Head-Untangled"), "r2:lrl-media/Head-Untangled", ["- /archive/**"]),
+    (BACKUP_SOURCE, "r2:lrl-media/Claude project files", []),
+    (os.path.join(HOME, "Desktop", "Channel pictures"), "r2:lrl-media/Channel pictures", []),
+]
+R2_SKIP = [
+    "- .git/**", "- node_modules/**", "- .venv/**", "- venv/**", "- __pycache__/**", "- Pods/**",
+    "- build/**", "- DerivedData/**", "- .build/**", "- .next/**", "- dist/**",
+    "- _to_delete/**", "- _old-parts/**", "- _parts/**", "- _retired-do-not-use/**",
     "- *Tautenay*/**", "- *HSC*/**",
-    "+ *.{mp4,mov,m4v,webm,wav,mp3,m4a,aiff,png,jpg,jpeg,webp,gif}",
-    "- *",
+    "- .DS_Store", "- *.part[0-9]*", "- *.pyc",
 ]
 # What cloud sessions save goes to lrl-media/from-cloud and is brought down here each evening.
 FROM_CLOUD_SOURCE = "r2:lrl-media/from-cloud"
@@ -326,23 +330,33 @@ def drive_backup(drive, repos):
     return "Copied %s to Google Drive, My Drive/%s (git folders, build output and the Tautenay and HSC folder left out)." % (short(BACKUP_SOURCE), BACKUP_FOLDER), True
 
 
-def media_upload():
-    """One-way copy of the kit's media into R2. rclone copy adds and updates, never removes."""
+def media_upload(repos):
+    """One-way copy of the project folders into R2. rclone copy adds and updates, never removes."""
     rclone = shutil.which("rclone")
     if not rclone:
-        return "rclone is not installed, so the media copy to Cloudflare R2 was skipped.", True
+        return "rclone is not installed, so the copy to Cloudflare R2 was skipped.", True
     _, remotes, _ = run([rclone, "listremotes"], timeout=30)
     if "r2:" not in remotes.split():
-        return "rclone has no r2 remote yet, so the media copy to Cloudflare R2 was skipped.", True
-    if not os.path.isdir(MEDIA_SOURCE):
-        return "%s not found, so the media copy was skipped." % short(MEDIA_SOURCE), False
-    args = [rclone, "copy", MEDIA_SOURCE, MEDIA_TARGET, "--fast-list", "--transfers", "4", "--ignore-case", "--log-level", "ERROR"]
-    for rule in MEDIA_FILTER:
-        args += ["--filter", rule]
-    code, _, err = run(args, timeout=3 * 3600)
-    if code != 0:
-        return "The media copy to Cloudflare R2 did not finish (%s)." % (err.splitlines()[-1] if err else "no reason given"), False
-    return "Copied the video, audio and pictures in %s to Cloudflare R2, bucket lrl-media (parts and anything waiting to be binned left out)." % short(MEDIA_SOURCE), True
+        return "rclone has no r2 remote yet, so the copy to Cloudflare R2 was skipped.", True
+    done, failed = [], []
+    for source, target, extra in R2_COPIES:
+        if not os.path.isdir(source):
+            failed.append("%s not found" % short(source))
+            continue
+        args = [rclone, "copy", source, target, "--fast-list", "--transfers", "4", "--ignore-case", "--log-level", "ERROR"]
+        for rule in extra + R2_SKIP:
+            args += ["--filter", rule]
+        for r in repos:
+            if r.startswith(source + os.sep):
+                args += ["--filter", "- /%s/**" % os.path.relpath(r, source)]
+        code, _, err = run(args, timeout=3 * 3600)
+        if code != 0:
+            failed.append("%s (%s)" % (short(source), err.splitlines()[-1] if err else "no reason given"))
+        else:
+            done.append(short(source))
+    if failed:
+        return "The copy to Cloudflare R2 did not finish for: %s." % "; ".join(failed), False
+    return "Copied %s to Cloudflare R2, bucket lrl-media (git folders, build output, parts, anything waiting to be binned and the Tautenay and HSC folder left out)." % " and ".join(done), True
 
 
 def media_download():
@@ -459,7 +473,7 @@ def main():
     drive = drive_root()
     backup_line, backup_ok = drive_backup(drive, repos) if update else ("Copy to Google Drive skipped (report only).", True)
     gdrive, gdrive_error = cloud_changes(drive, "Google Drive", day_ago, skip=(BACKUP_FOLDER,))
-    media_line, media_ok = media_upload() if update else ("Media copy to Cloudflare R2 skipped (report only).", True)
+    media_line, media_ok = media_upload(repos) if update else ("Media copy to Cloudflare R2 skipped (report only).", True)
     down_line, down_ok = media_download() if update else ("Nothing brought down from Cloudflare R2 (report only).", True)
 
     needs = []
