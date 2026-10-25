@@ -19,23 +19,25 @@ All under team PCA5FZ26HM. "Testers" is the external group (Apple reviews each n
 
 | App | Newest build | TestFlight | Repo and branch | Open PRs |
 | --- | --- | --- | --- | --- |
-| Pace | 0.2 (6), the Apple Watch build | Approved. 0.1 (1), 0.2 (5) and 0.2 (6) all Testing in Testers (23 Oct evening). | pace, main | #2 Share with Coach |
-| Mull | 1.0 (3), with the Apple Watch app | Approved. 1.0 (3) Testing in Testers. Review sign-in: review@liferegulationlab.com. | mull, claude/project-thread-ni92pc (the repo's default; there is no main yet) | none |
+| Pace | 0.2 (8), the teal restyle and Moss, uploaded 25 Oct 21:43 | Approved. 0.1 (1), 0.2 (5) and 0.2 (6) Testing in Testers. 0.2 (8) still to be added to Testers. | pace, main | #2 Share with Coach |
+| Mull | 1.0 (5), the teal restyle and Moss, uploaded 25 Oct 21:43 | Approved. 1.0 (3) Testing in Testers; 1.0 (5) still to be added to Testers. Review sign-in: review@liferegulationlab.com. | mull, claude/project-thread-ni92pc (the repo's default; there is no main yet) | none |
 | Desk | iOS and macOS 1.0.0 (2); iOS 1.0.0 (3) with the icon fix | Approved. iOS 1.0.0 (2), iOS 1.0.0 (3) and macOS 1.0.0 (2) all Testing in Testers. | Desk, main | none |
-| Regulate | 0.1.0 (3), with Reset and the iPhone fixes | Internal only ("Me" group). Not for outside testers. | regulate, main | #37 Coming soon; #38 and #39 drafts (phone sign-in, RevenueCat); #40 transfers wording |
-| Cairn | 1.0 (1), uploaded 23 October 12:29 | Submitted 23 Oct evening to the external "Testers" group, Waiting for Review. | cairn, main | #1 DPIA pack |
-| Head Untangled app | 1.0 (3) | Approved. 1.0 (3) Testing in "Testers". Also in internal "Test". | coaching-studio, claude/project-thread-ni92pc | #5 Resets |
+| Regulate | 0.1.0 (6), the teal restyle and Moss, uploaded 25 Oct 21:43 | Internal only ("Me" group). Not for outside testers. | regulate, main | #37 Coming soon; #38 and #39 drafts (phone sign-in, RevenueCat); #40 transfers wording |
+| Cairn | 1.0 (3), the teal accent, uploaded 25 Oct 21:43 | 1.0 (1) submitted 23 Oct to the external "Testers" group. 1.0 (3) still to be added to Testers. | cairn, main | #1 DPIA pack |
+| Head Untangled app | 1.0 (5), the teal restyle and Moss, uploaded 25 Oct 21:43 | Approved. 1.0 (3) Testing in "Testers"; 1.0 (5) still to be added. Also in internal "Test". | coaching-studio, main | #5 Resets |
+
+Uploads: `scripts/testflight-all.sh` builds and uploads all five apps above (not Desk, not Picture Talk) from the newest GitHub code, in one Terminal command on the Mac (25 Oct).
 
 Merged today: Pace #5 and #6, Mull #1, Desk #7, #8 and #9, Regulate #53 and #54, Cairn #8 (iPhone and iPad app, Delete my account), liferegulationlab-site #9, #10, #11 and #12, all-projects #3, #4 and #5 (the evening sync check).
 
 ### Next steps
 
-1. **Cairn:** wait for Beta App Review of 1.0 (1). If Apple asks for a demo login, finish the review@liferegulationlab.com account in Willow House and add it to the Test Information. Next upload must be build 2 or higher.
-2. **Pace:** try the watch app on a real watch. Check the 0.2 (6) What to Test text (written as a guess). Next upload must be build 7 or higher.
-3. **Mull:** try the watch app. Subscriptions still need the Paid Apps Agreement. Next upload must be build 4 or higher.
+1. **Cairn:** wait for Beta App Review of 1.0 (1). If Apple asks for a demo login, finish the review@liferegulationlab.com account in Willow House and add it to the Test Information. Next upload must be build 4 or higher.
+2. **Pace:** try the watch app on a real watch. Check the 0.2 (6) What to Test text (written as a guess). Next upload must be build 9 or higher.
+3. **Mull:** try the watch app. Subscriptions still need the Paid Apps Agreement. Next upload must be build 6 or higher.
 4. **Desk:** nothing waiting.
-5. **Regulate:** stays closed to new accounts. Open privacy and data protection actions are in the Regulate status note (Claude project files/Regulate/Regulate-Status.md).
-6. **Head Untangled app:** testers have 1.0 (3). Decide on PR #5 (Resets).
+5. **Regulate:** 0.1.0 (6) uploaded 25 Oct; next upload must be build 7 or higher. Stays closed to new accounts. Open privacy and data protection actions are in the Regulate status note (Claude project files/Regulate/Regulate-Status.md).
+6. **Head Untangled app:** testers have 1.0 (3); 1.0 (5) uploaded 25 Oct. Next upload must be build 6 or higher. Decide on PR #5 (Resets).
 
 ## Other projects
 
