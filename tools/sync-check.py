@@ -54,12 +54,18 @@ R2_COPIES = [
     (os.path.join(HOME, "Desktop", "Projects", "Head-Untangled"), "r2:lrl-media/Head-Untangled", ["- /archive/**"]),
     (BACKUP_SOURCE, "r2:lrl-media/Claude project files", []),
     (os.path.join(HOME, "Desktop", "Channel pictures"), "r2:lrl-media/Channel pictures", []),
+    # every other production folder (workbooks, printables, site drafts); the kit has its own line above,
+    # and "_Not channel – to file" holds bought planners and ward reading that stay on the Mac
+    (os.path.join(HOME, "Desktop", "Projects"), "r2:lrl-media/Projects", ["- /Head-Untangled/**", "- /_Not channel*/**"]),
 ]
 R2_SKIP = [
     "- .git/**", "- node_modules/**", "- .venv/**", "- venv/**", "- __pycache__/**", "- Pods/**",
     "- build/**", "- DerivedData/**", "- .build/**", "- .next/**", "- dist/**",
     "- _to_delete/**", "- _old-parts/**", "- _parts/**", "- _retired-do-not-use/**",
-    "- *Tautenay*/**", "- *HSC*/**",
+    "- *Tautenay*/**", "- *Tautenay*", "- *HSC*/**", "- *HSC*",
+    "- *Structured?Care*/**", "- *Structured?Care*", "- *Quality?Improvement*/**", "- *QI?project*/**",
+    # keys and account details never travel, wherever they are filed
+    "- .env", "- .env.*", "- *.pem", "- *.p8", "- *.p12", "- *Account Info*", "- *password*", "- *credentials*",
     "- .DS_Store", "- *.part[0-9]*", "- *.pyc",
 ]
 # What cloud sessions save goes to lrl-media/from-cloud and is brought down here each evening.
@@ -356,7 +362,7 @@ def media_upload(repos):
             done.append(short(source))
     if failed:
         return "The copy to Cloudflare R2 did not finish for: %s." % "; ".join(failed), False
-    return "Copied %s to Cloudflare R2, bucket lrl-media (git folders, build output, parts, anything waiting to be binned and the Tautenay and HSC folder left out)." % " and ".join(done), True
+    return "Copied %s to Cloudflare R2, bucket lrl-media (git folders, build output, parts, keys, anything waiting to be binned and anything Tautenay, HSC, QI or Structured Care left out)." % " and ".join(done), True
 
 
 def media_download():
