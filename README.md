@@ -20,6 +20,7 @@ Where each project stands (builds, TestFlight, open pull requests, next steps) i
 | [pace](https://github.com/LifeRegulationLab/pace) | Pace: day planner and focus timer for iPhone, iPad, Mac and Apple Watch. |
 | [mull](https://github.com/LifeRegulationLab/mull) | Mull: self-coaching app for iPhone, Mac and Apple Watch (App Store version of Stuart's private Coach). |
 | [mull › Moss/](https://github.com/LifeRegulationLab/mull/tree/claude/project-thread-ni92pc/Moss) | Moss: the shared companion for the apps (Mull's face). Character, shared server tables and privacy rules; in Mull and Pace so far. |
+| [picture-talk](https://github.com/LifeRegulationLab/picture-talk) | Picture Talk: picture communication app for adults with learning disabilities (Vite, React, Capacitor). Works with no account; optional Apple or Google sign-in for a backup. Pictures made in ChatGPT go in `Claude project files/Picture Talk/symbols/`. |
 | [head-untangled-kit](https://github.com/LifeRegulationLab/head-untangled-kit) | The Head Untangled kit folder: rules, runbook and production material (Desktop/Projects/Head-Untangled). |
 | [content-engine](https://github.com/LifeRegulationLab/content-engine) | Concept to product: research, script, narrate, animate and publish videos, workbooks and courses. |
 | [claude-mods](https://github.com/LifeRegulationLab/claude-mods) | Claude Code mods: auto-model, background-board, clean-view, context-gauge, cost-meter, dashboard, morning-brief, production-tracker, usage-limits. |
