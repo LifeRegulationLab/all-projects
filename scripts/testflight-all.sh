@@ -28,10 +28,10 @@ mkdir -p $WORK/logs "$NOTES"
 
 # app  repo  branch  first build number to try
 APPS=(
-  "pace            pace             main                          9"
-  "mull            mull             claude/project-thread-ni92pc  6"
-  "regulate        regulate         main                          7"
-  "headuntangled   coaching-studio  main                          6"
+  "pace            pace             main                          10"
+  "mull            mull             claude/project-thread-ni92pc  7"
+  "regulate        regulate         main                          8"
+  "headuntangled   coaching-studio  main                          7"
   "cairn           cairn            main                          4"
 )
 if (( $# )); then WANT=($@); else WANT=(pace mull regulate headuntangled cairn); fi
