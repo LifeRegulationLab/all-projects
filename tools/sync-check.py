@@ -53,6 +53,7 @@ R2_COPIES = [
     # source, target, extra rules (the kit's archive is retired material that never travels)
     (os.path.join(HOME, "Desktop", "Projects", "Head-Untangled"), "r2:lrl-media/Head-Untangled", ["- /archive/**"]),
     (BACKUP_SOURCE, "r2:lrl-media/Claude project files", []),
+    (os.path.join(HOME, "Desktop", "Channel pictures"), "r2:lrl-media/Channel pictures", []),
 ]
 R2_SKIP = [
     "- .git/**", "- node_modules/**", "- .venv/**", "- venv/**", "- __pycache__/**", "- Pods/**",
