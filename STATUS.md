@@ -22,7 +22,7 @@ All under team PCA5FZ26HM. "Testers" is the external group (Apple reviews each n
 | Pace | 0.2 (9), Moss in the middle of Today, uploaded late on 25 Oct (0.2 (8) earlier the same evening) | Approved. 0.1 (1), 0.2 (5) and 0.2 (6) Testing in Testers. 0.2 (8) and (9) internal only (Stuart, 25 Oct). | pace, main | #2 Share with Coach |
 | Mull | 1.0 (6), Sign in with Apple and Google (mull #8) and Moss on the home page, uploaded late on 25 Oct | Approved. 1.0 (3) Testing in Testers; 1.0 (5) and (6) internal only (Stuart, 25 Oct). Review sign-in: review@liferegulationlab.com. | mull, claude/project-thread-ni92pc (the repo's default; there is no main yet) | none |
 | Desk | iOS and macOS 1.0.0 (2); iOS 1.0.0 (3) with the icon fix | Approved. iOS 1.0.0 (2), iOS 1.0.0 (3) and macOS 1.0.0 (2) all Testing in Testers. | Desk, main | none |
-| Regulate | 0.1.0 (7), Moss in the middle of Me, uploaded late on 25 Oct | Internal only ("Me" group). Not for outside testers. | regulate, main | #37 Coming soon; #38 and #39 drafts (phone sign-in, RevenueCat); #40 transfers wording |
+| Regulate | 0.1.0 (8), Moss in the middle of Me, with the fix for the "This page didn't load" error in 0.1.0 (7) (regulate #65), uploaded late on 25 Oct | Internal only ("Me" group). Not for outside testers. | regulate, main | #37 Coming soon; #38 and #39 drafts (phone sign-in, RevenueCat); #40 transfers wording |
 | Cairn | 1.0 (3), the teal accent, uploaded 25 Oct 21:43 | 1.0 (1) submitted 23 Oct to the external "Testers" group. 1.0 (3) internal only (Stuart, 25 Oct). | cairn, main | #1 DPIA pack |
 | Head Untangled app | 1.0 (6), the new Moss, uploaded late on 25 Oct | Approved. 1.0 (3) Testing in "Testers"; 1.0 (5) internal only (Stuart, 25 Oct). Also in internal "Test". | coaching-studio, main | #5 Resets |
 
@@ -36,7 +36,7 @@ Merged today: Pace #5 and #6, Mull #1, Desk #7, #8 and #9, Regulate #53 and #54,
 2. **Pace:** try the watch app on a real watch. Check the 0.2 (6) What to Test text (written as a guess). Next upload must be build 10 or higher.
 3. **Mull:** try the watch app and the new Apple and Google sign-in. Subscriptions still need the Paid Apps Agreement. Next upload must be build 7 or higher.
 4. **Desk:** nothing waiting.
-5. **Regulate:** 0.1.0 (7) uploaded 25 Oct; next upload must be build 8 or higher. Stays closed to new accounts. Open privacy and data protection actions are in the Regulate status note (Claude project files/Regulate/Regulate-Status.md).
+5. **Regulate:** 0.1.0 (8) uploaded 25 Oct; next upload must be build 9 or higher. Stays closed to new accounts. Open privacy and data protection actions are in the Regulate status note (Claude project files/Regulate/Regulate-Status.md).
 6. **Head Untangled app:** testers have 1.0 (3); 1.0 (6) uploaded 25 Oct. Next upload must be build 7 or higher. Decide on PR #5 (Resets).
 
 ## Other projects
