@@ -19,12 +19,12 @@ All under team PCA5FZ26HM. "Testers" is the external group (Apple reviews each n
 
 | App | Newest build | TestFlight | Repo and branch | Open PRs |
 | --- | --- | --- | --- | --- |
-| Pace | 0.2 (8), the teal restyle and Moss, uploaded 25 Oct 21:43 | Approved. 0.1 (1), 0.2 (5) and 0.2 (6) Testing in Testers. 0.2 (8) still to be added to Testers. | pace, main | #2 Share with Coach |
-| Mull | 1.0 (5), the teal restyle and Moss, uploaded 25 Oct 21:43 | Approved. 1.0 (3) Testing in Testers; 1.0 (5) still to be added to Testers. Review sign-in: review@liferegulationlab.com. | mull, claude/project-thread-ni92pc (the repo's default; there is no main yet) | none |
+| Pace | 0.2 (8), the teal restyle and Moss, uploaded 25 Oct 21:43 | Approved. 0.1 (1), 0.2 (5) and 0.2 (6) Testing in Testers. 0.2 (8) internal only (Stuart, 25 Oct). | pace, main | #2 Share with Coach |
+| Mull | 1.0 (5), the teal restyle and Moss, uploaded 25 Oct 21:43 | Approved. 1.0 (3) Testing in Testers; 1.0 (5) internal only (Stuart, 25 Oct). Review sign-in: review@liferegulationlab.com. | mull, claude/project-thread-ni92pc (the repo's default; there is no main yet) | none |
 | Desk | iOS and macOS 1.0.0 (2); iOS 1.0.0 (3) with the icon fix | Approved. iOS 1.0.0 (2), iOS 1.0.0 (3) and macOS 1.0.0 (2) all Testing in Testers. | Desk, main | none |
 | Regulate | 0.1.0 (6), the teal restyle and Moss, uploaded 25 Oct 21:43 | Internal only ("Me" group). Not for outside testers. | regulate, main | #37 Coming soon; #38 and #39 drafts (phone sign-in, RevenueCat); #40 transfers wording |
-| Cairn | 1.0 (3), the teal accent, uploaded 25 Oct 21:43 | 1.0 (1) submitted 23 Oct to the external "Testers" group. 1.0 (3) still to be added to Testers. | cairn, main | #1 DPIA pack |
-| Head Untangled app | 1.0 (5), the teal restyle and Moss, uploaded 25 Oct 21:43 | Approved. 1.0 (3) Testing in "Testers"; 1.0 (5) still to be added. Also in internal "Test". | coaching-studio, main | #5 Resets |
+| Cairn | 1.0 (3), the teal accent, uploaded 25 Oct 21:43 | 1.0 (1) submitted 23 Oct to the external "Testers" group. 1.0 (3) internal only (Stuart, 25 Oct). | cairn, main | #1 DPIA pack |
+| Head Untangled app | 1.0 (5), the teal restyle and Moss, uploaded 25 Oct 21:43 | Approved. 1.0 (3) Testing in "Testers"; 1.0 (5) internal only (Stuart, 25 Oct). Also in internal "Test". | coaching-studio, main | #5 Resets |
 
 Uploads: `scripts/testflight-all.sh` builds and uploads all five apps above (not Desk, not Picture Talk) from the newest GitHub code, in one Terminal command on the Mac (25 Oct).
 
