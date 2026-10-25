@@ -8,6 +8,10 @@ Checked against GitHub, App Store Connect notes from today and the folders on th
 
 - App Store Connect, Business page: the **W-9** tax form and the **Paid Apps Agreement** are outstanding. Paid Apps is needed before any subscription or paid app (Mull, Desk, Regulate Plus) can go on sale.
 
+## Before any app goes to App Store review or Google Play
+
+- Check every app offers **Sign in with Apple** and **Sign in with Google** where it has an account. Not all do yet (Stuart, 25 October 2026). Apple requires Sign in with Apple when an app offers another sign-in such as Google. Check each app's sign-in screen on a phone before it is submitted.
+
 ## Apps on App Store Connect
 
 All under team PCA5FZ26HM. "Testers" is the external group (Apple reviews each new version's first build); "Internal" or "Me" is Stuart's own group (no review).
