@@ -3,8 +3,8 @@
 
 Looks at every git folder on the Mac, compares it with GitHub, brings a
 folder up to date only when that is safe (no changed files, nothing of its
-own to merge), copies the project files folder into Google Drive, and
-writes SYNC-CHECK.md in this repo. It never deletes,
+own to merge), copies the project files folder into Google Drive, copies the Head
+Untangled media into Cloudflare R2, and writes SYNC-CHECK.md in this repo. It never deletes,
 pushes code, merges or changes a branch. The only thing it pushes is
 SYNC-CHECK.md itself.
 
@@ -45,6 +45,18 @@ CLOUD_STORAGE = os.path.join(HOME, "Library", "CloudStorage")
 BACKUP_SOURCE = os.path.join(HOME, "Desktop", "Claude project files")
 BACKUP_FOLDER = "Mac backup"
 BACKUP_SKIP = ["Tautenay and HSC", "_to_delete", "build", "DerivedData", "node_modules", "Pods", ".build", ".DS_Store"]
+
+# Copied to Cloudflare R2 each evening so cloud sessions can reach it without the Mac.
+# Only video, audio and pictures go; the words are in GitHub. rclone's remote "r2" is set up once by hand.
+MEDIA_SOURCE = os.path.join(HOME, "Desktop", "Projects", "Head-Untangled")
+MEDIA_TARGET = "r2:lrl-media/Head-Untangled"
+MEDIA_FILTER = [
+    "- .git/**", "- node_modules/**", "- .venv/**", "- venv/**",
+    "- _to_delete/**", "- _old-parts/**", "- _parts/**", "- archive/**", "- _retired-do-not-use/**",
+    "- *Tautenay*/**", "- *HSC*/**",
+    "+ *.{mp4,mov,m4v,webm,wav,mp3,m4a,aiff,png,jpg,jpeg,webp,gif}",
+    "- *",
+]
 
 # launchd starts with a bare PATH; gh lives under Homebrew.
 os.environ["PATH"] = "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:" + os.environ.get("PATH", "")
@@ -310,6 +322,25 @@ def drive_backup(drive, repos):
     return "Copied %s to Google Drive, My Drive/%s (git folders, build output and the Tautenay and HSC folder left out)." % (short(BACKUP_SOURCE), BACKUP_FOLDER), True
 
 
+def media_upload():
+    """One-way copy of the kit's media into R2. rclone copy adds and updates, never removes."""
+    rclone = shutil.which("rclone")
+    if not rclone:
+        return "rclone is not installed, so the media copy to Cloudflare R2 was skipped.", True
+    _, remotes, _ = run([rclone, "listremotes"], timeout=30)
+    if "r2:" not in remotes.split():
+        return "rclone has no r2 remote yet, so the media copy to Cloudflare R2 was skipped.", True
+    if not os.path.isdir(MEDIA_SOURCE):
+        return "%s not found, so the media copy was skipped." % short(MEDIA_SOURCE), False
+    args = [rclone, "copy", MEDIA_SOURCE, MEDIA_TARGET, "--fast-list", "--transfers", "4", "--ignore-case", "--log-level", "ERROR"]
+    for rule in MEDIA_FILTER:
+        args += ["--filter", rule]
+    code, _, err = run(args, timeout=3 * 3600)
+    if code != 0:
+        return "The media copy to Cloudflare R2 did not finish (%s)." % (err.splitlines()[-1] if err else "no reason given"), False
+    return "Copied the video, audio and pictures in %s to Cloudflare R2, bucket lrl-media (parts and anything waiting to be binned left out)." % short(MEDIA_SOURCE), True
+
+
 def status_updated():
     try:
         with open(STATUS, encoding="utf-8") as f:
@@ -403,6 +434,7 @@ def main():
     drive = drive_root()
     backup_line, backup_ok = drive_backup(drive, repos) if update else ("Copy to Google Drive skipped (report only).", True)
     gdrive, gdrive_error = cloud_changes(drive, "Google Drive", day_ago, skip=(BACKUP_FOLDER,))
+    media_line, media_ok = media_upload() if update else ("Media copy to Cloudflare R2 skipped (report only).", True)
 
     needs = []
     for r in results:
@@ -414,6 +446,8 @@ def main():
                 needs.append("**%s #%d** is a draft pull request; it should be marked ready for review." % (p["repository"]["name"], p["number"]))
     if not backup_ok:
         needs.append(backup_line)
+    if not media_ok:
+        needs.append(media_line)
     if denied:
         needs.append("The Mac did not let the check read: %s (see the note at the end)." % ", ".join(short(d) for d in denied))
     status_line = status_updated()
@@ -511,6 +545,9 @@ def main():
         w.append("")
     else:
         w.append("Nothing else changed in Google Drive in the last day.\n")
+
+    w.append("## Cloudflare R2\n")
+    w.append(media_line + "\n")
 
     if denied or any(e and "did not allow" in e for e in (icloud_error, gdrive_error)):
         w.append("## Note\n")

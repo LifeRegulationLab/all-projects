@@ -4,7 +4,7 @@ Index of Life Regulation Lab projects. Link this repo in a conversation to give 
 
 Where each project stands (builds, TestFlight, open pull requests, next steps) is in [STATUS.md](STATUS.md).
 
-[SYNC-CHECK.md](SYNC-CHECK.md) is written by the Mac every evening at 21:00: it compares every project folder with GitHub, brings a folder up to date when that is safe, and lists only what is out of step. The check is `tools/sync-check.py`; `tools/install-sync-check.sh` sets the evening run (add `--remove` to stop it). It also copies `Desktop/Claude project files` into Google Drive (My Drive/Mac backup), leaving out git folders and build output, and lists anything changed that day in iCloud Drive or Google Drive. It never deletes, merges or sends code; the only thing it sends to GitHub is SYNC-CHECK.md.
+[SYNC-CHECK.md](SYNC-CHECK.md) is written by the Mac every evening at 21:00: it compares every project folder with GitHub, brings a folder up to date when that is safe, and lists only what is out of step. The check is `tools/sync-check.py`; `tools/install-sync-check.sh` sets the evening run (add `--remove` to stop it). It also copies `Desktop/Claude project files` into Google Drive (My Drive/Mac backup), leaving out git folders and build output, and lists anything changed that day in iCloud Drive or Google Drive. It copies the video, audio and pictures in `Desktop/Projects/Head-Untangled` into the Cloudflare R2 bucket `lrl-media`, so cloud sessions can reach them without the Mac; that step needs rclone with a remote named `r2`, and is skipped until it is set up. It never deletes, merges or sends code; the only thing it sends to GitHub is SYNC-CHECK.md.
 
 | Repo | What it is |
 | --- | --- |
