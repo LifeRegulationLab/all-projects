@@ -6,7 +6,8 @@ Checked against GitHub, App Store Connect notes from today and the folders on th
 
 ## Waiting on Stuart (business)
 
-- App Store Connect, Business page: the **W-9** tax form and the **Paid Apps Agreement** are outstanding. Paid Apps is needed before any subscription or paid app (Mull, Desk, Regulate Plus) can go on sale.
+- App Store Connect, Business page: the **W-9** tax form and the **Paid Apps Agreement** are outstanding. Paid Apps is needed before any subscription or paid app (Mull, Regulate Plus) can go on sale.
+- Desk is a personal app (Stuart, 25 Oct): it stays in TestFlight for Stuart only, never goes on sale or on any website.
 
 ## Before any app goes to App Store review or Google Play
 
@@ -41,7 +42,7 @@ Merged today: Pace #5 and #6, Mull #1, Desk #7, #8 and #9, Regulate #53 and #54,
 | Project | Where it is | State |
 | --- | --- | --- |
 | Cairn | cairn, main | PR #8 merged 23 October: iPhone and iPad app (no sign-up or payment in the app) and Delete my account. |
-| liferegulationlab.com | liferegulationlab-site, master | 25 October (PR #14, merged): home and Apps pages list every app with the new icons (Pace, Mull, Desk, Head Untangled app in testing; Dealt With, Whole Story in development; Cairn). Privacy covers Pace, Mull, Desk, the Head Untangled app and Cairn; Dealt With and Whole Story still need entries before they reach testers. Status lines live in `src/lib/apps.ts`. |
+| liferegulationlab.com | liferegulationlab-site, master | 25 October (PR #14, merged): home and Apps pages list every app with the new icons (Pace, Mull, Head Untangled app in testing; Dealt With, Whole Story in development; Cairn). Privacy covers Pace, Mull, the Head Untangled app and Cairn (Desk removed 25 Oct, PR #16, as it is personal); Dealt With and Whole Story still need entries before they reach testers. Status lines live in `src/lib/apps.ts`. |
 | headuntangled.com | headuntangled-site, main | 25 October (PR #3, merged): new /app/ page for the Head Untangled app, a home page section and an App nav link. PR #1 (courses page) still open. |
 | Voice Studio | voice-studio | Working; no change since 15 October. |
 | Content engine | content-engine, main | 23 October: design and stage 1 plan for Head Untangled Studio, the app that queues and reviews products. |
