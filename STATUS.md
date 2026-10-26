@@ -52,7 +52,7 @@ Merged today: Pace #5 and #6, Mull #1, Desk #7, #8 and #9, Regulate #53 and #54,
 | Claude Code mods | claude-mods, main | Last change 14 October. |
 | Dashboards | dashboards, main | Last change 17 October. |
 | Coach (private) | Claude project files/private-coach, not in git | Stuart's own app. Mull is the App Store version. |
-| Ledger | Claude project files/Ledger, not in git | Personal money app, 14 October. |
+| Ledger | ledger, main | 26 October: Ledger 2 (PR #1): LLC and personal books, double entry, reconciled balances, iPhone receipts through iCloud Drive, encrypted backups each evening, and a tax centre for the US, Guernsey and the UK. Private, on the Mac only. |
 
 ## Folders on the Mac
 
