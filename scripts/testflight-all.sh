@@ -79,6 +79,11 @@ upload() {
         archive >> $log 2>&1; then
       return 1
     fi
+    # An app that starts Firebase stops on opening when the Google file is not inside it (Dealt With 3).
+    if [[ -f App/GoogleService-Info.plist ]] && ! ls $archive/Products/Applications/*.app/GoogleService-Info.plist >/dev/null 2>&1; then
+      print "  GoogleService-Info.plist is not inside the $name app: add it to the Xcode project's resources" | tee -a $log
+      return 1
+    fi
     print "  uploading $name ($build)…"
     if xcodebuild -exportArchive -archivePath $archive -exportOptionsPlist $EXPORT \
         -exportPath $WORK/export/$name -allowProvisioningUpdates >> $log 2>&1; then
