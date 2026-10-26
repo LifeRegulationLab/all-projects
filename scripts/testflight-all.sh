@@ -28,13 +28,13 @@ mkdir -p $WORK/logs "$NOTES"
 
 # app  repo  branch  first build number to try
 APPS=(
-  "pace            pace             main                          12"
-  "mull            mull             claude/project-thread-ni92pc  8"
+  "pace            pace             main                          13"
+  "mull            mull             claude/project-thread-ni92pc  9"
   "regulate        regulate         main                          11"
-  "headuntangled   coaching-studio  main                          9"
+  "headuntangled   coaching-studio  main                          10"
   "cairn           cairn            main                          4"
-  "wholestory      whole-story      main                          7"
-  "dealtwith       life-admin       main                          3"
+  "wholestory      whole-story      main                          8"
+  "dealtwith       life-admin       main                          4"
 )
 if (( $# )); then WANT=($@); else WANT=(pace mull regulate headuntangled cairn wholestory dealtwith); fi
 
@@ -99,7 +99,7 @@ upload() {
 # the project the first time).
 firebase_app() {
   local app=$1 dir=$2 project=$3 bundle=$4 build=$5 gfile=$WORK/GoogleService-Info-$1.plist
-  local findid="let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const a=(JSON.parse(s).result||[]).find(x=>x.namespace==='$bundle');process.stdout.write(a?a.appId:'')})"
+  local findid="let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const a=(JSON.parse(s).result||[]).find(x=>(x.bundleId||x.namespace)==='$bundle');process.stdout.write(a?a.appId:'')})"
   if [[ ! -s $gfile ]]; then
     local fid=$(npx -y firebase-tools apps:list IOS --project $project --json 2>/dev/null | node -e "$findid")
     if [[ -z $fid ]]; then
