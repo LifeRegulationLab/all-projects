@@ -464,7 +464,15 @@ def main():
 
     # keep this repo current first, so the report lands on top of the latest STATUS.md
     if update:
+        with open(__file__, "rb") as f:
+            before = f.read()
         refresh_self()
+        with open(__file__, "rb") as f:
+            changed = f.read() != before
+        # the pull may bring a newer version of this script; run that one, not the copy already in memory
+        if changed and not os.environ.get("SYNC_CHECK_RESTARTED"):
+            os.environ["SYNC_CHECK_RESTARTED"] = "1"
+            os.execv(sys.executable, [sys.executable, os.path.abspath(__file__)] + sys.argv[1:])
 
     repos, denied = find_repos()
     results = [check_repo(p, update) for p in repos]
