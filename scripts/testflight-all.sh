@@ -6,7 +6,7 @@
 #   cd ~/all-projects && git pull -q && zsh scripts/testflight-all.sh
 #
 # Or only some apps:  zsh scripts/testflight-all.sh pace mull
-# Apps: pace, mull, regulate, headuntangled, cairn. Not Desk (personal) and not Picture Talk (own script).
+# Apps: pace, mull, regulate, headuntangled, cairn, wholestory. Not Desk (personal) and not Picture Talk (own script).
 #
 # Each app is built in a clean copy under ~/testflight-builds (outside the Desktop, so not copied to
 # the cloud), so the Desktop folders are never changed. Build numbers are given on the command line;
@@ -33,8 +33,9 @@ APPS=(
   "regulate        regulate         main                          10"
   "headuntangled   coaching-studio  main                          8"
   "cairn           cairn            main                          4"
+  "wholestory      whole-story      main                          2"
 )
-if (( $# )); then WANT=($@); else WANT=(pace mull regulate headuntangled cairn); fi
+if (( $# )); then WANT=($@); else WANT=(pace mull regulate headuntangled cairn wholestory); fi
 
 EXPORT=$WORK/ExportOptions.plist
 cat > $EXPORT <<EOF
@@ -68,7 +69,7 @@ fetch() {
 upload() {
   local name=$1 project=$2 scheme=$3 build=$4 log=$WORK/logs/$1.log tries=0
   : > $log
-  while (( tries < 3 )); do
+  while (( tries < 6 )); do
     local archive=$WORK/archives/$name-$build.xcarchive
     rm -rf $archive $WORK/export/$name
     print "  archiving $name ($build)…"
@@ -124,6 +125,22 @@ build_app() {
         && VITE_SUPABASE_URL=$url VITE_SUPABASE_ANON_KEY=$key VITE_AI_ENABLED=false \
            $pnpm --filter @cairn/web build:app >> $WORK/logs/$app.log 2>&1 \
         && cd apps/web/ios/App && upload cairn App.xcodeproj App $build) ;;
+    wholestory)
+      # Firebase's Google file is not in the repo: kept once in $WORK, made by the Firebase CLI if missing.
+      local gfile=$WORK/GoogleService-Info-wholestory.plist
+      if [[ ! -s $gfile ]]; then
+        local fid=$(npx -y firebase-tools apps:list IOS --project whole-story-lrl --json 2>/dev/null \
+          | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const a=(JSON.parse(s).result||[]).find(x=>x.namespace==='com.liferegulationlab.wholestory');process.stdout.write(a?a.appId:'')})")
+        [[ -n $fid ]] && npx -y firebase-tools apps:sdkconfig IOS "$fid" --project whole-story-lrl -o $gfile >> $WORK/logs/$app.log 2>&1
+      fi
+      local reversed=$(/usr/libexec/PlistBuddy -c 'Print :REVERSED_CLIENT_ID' $gfile 2>/dev/null || true)
+      if [[ -z $reversed ]]; then say "$app: NOT UPLOADED (no Firebase Google file with a REVERSED_CLIENT_ID; sign in to the Firebase CLI on the Mac)"; return; fi
+      (cd $dir && npm ci --no-audit --no-fund >> $WORK/logs/$app.log 2>&1 \
+        && npx vite build >> $WORK/logs/$app.log 2>&1 \
+        && npx cap sync ios >> $WORK/logs/$app.log 2>&1 \
+        && cp $gfile ios/App/App/GoogleService-Info.plist \
+        && sed -i '' "s/GOOGLE_REVERSED_CLIENT_ID/$reversed/" ios/App/App/Info.plist \
+        && cd ios/App && upload wholestory App.xcodeproj App $build) ;;
   esac
   local result=$?
   # The upload ran in a subshell, so read the number from the newest archive it made.
