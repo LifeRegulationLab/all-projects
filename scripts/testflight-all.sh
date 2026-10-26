@@ -6,7 +6,7 @@
 #   cd ~/all-projects && git pull -q && zsh scripts/testflight-all.sh
 #
 # Or only some apps:  zsh scripts/testflight-all.sh pace mull
-# Apps: pace, mull, regulate, headuntangled, cairn, wholestory. Not Desk (personal) and not Picture Talk (own script).
+# Apps: pace, mull, regulate, headuntangled, cairn, wholestory, dealtwith. Not Desk (personal) and not Picture Talk (own script).
 #
 # Each app is built in a clean copy under ~/testflight-builds (outside the Desktop, so not copied to
 # the cloud), so the Desktop folders are never changed. Build numbers are given on the command line;
@@ -34,8 +34,9 @@ APPS=(
   "headuntangled   coaching-studio  main                          9"
   "cairn           cairn            main                          4"
   "wholestory      whole-story      main                          7"
+  "dealtwith       life-admin       main                          3"
 )
-if (( $# )); then WANT=($@); else WANT=(pace mull regulate headuntangled cairn wholestory); fi
+if (( $# )); then WANT=($@); else WANT=(pace mull regulate headuntangled cairn wholestory dealtwith); fi
 
 EXPORT=$WORK/ExportOptions.plist
 cat > $EXPORT <<EOF
@@ -93,6 +94,33 @@ upload() {
   return 1
 }
 
+# A Capacitor app on its own Firebase project (Whole Story, Dealt With). Firebase's Google file is not
+# in the repo: kept once in $WORK, made by the Firebase CLI if missing (registering the iPhone app in
+# the project the first time).
+firebase_app() {
+  local app=$1 dir=$2 project=$3 bundle=$4 build=$5 gfile=$WORK/GoogleService-Info-$1.plist
+  local findid="let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const a=(JSON.parse(s).result||[]).find(x=>x.namespace==='$bundle');process.stdout.write(a?a.appId:'')})"
+  if [[ ! -s $gfile ]]; then
+    local fid=$(npx -y firebase-tools apps:list IOS --project $project --json 2>/dev/null | node -e "$findid")
+    if [[ -z $fid ]]; then
+      npx -y firebase-tools apps:create IOS "$app iPhone" --bundle-id $bundle --project $project >> $WORK/logs/$app.log 2>&1
+      fid=$(npx -y firebase-tools apps:list IOS --project $project --json 2>/dev/null | node -e "$findid")
+    fi
+    [[ -n $fid ]] && npx -y firebase-tools apps:sdkconfig IOS "$fid" --project $project -o $gfile >> $WORK/logs/$app.log 2>&1
+  fi
+  local reversed=$(/usr/libexec/PlistBuddy -c 'Print :REVERSED_CLIENT_ID' $gfile 2>/dev/null || true)
+  if [[ -z $reversed ]]; then
+    print "  no REVERSED_CLIENT_ID in $gfile: switch on Google sign-in in Firebase ($project), delete the file and run again" >> $WORK/logs/$app.log
+    return 1
+  fi
+  cd $dir && npm ci --no-audit --no-fund >> $WORK/logs/$app.log 2>&1 \
+    && npx vite build >> $WORK/logs/$app.log 2>&1 \
+    && npx cap sync ios >> $WORK/logs/$app.log 2>&1 \
+    && cp $gfile ios/App/App/GoogleService-Info.plist \
+    && sed -i '' "s/GOOGLE_REVERSED_CLIENT_ID/$reversed/" ios/App/App/Info.plist \
+    && cd ios/App && upload $app App.xcodeproj App $build
+}
+
 build_app() {
   local app=$1 repo=$2 branch=$3 build=$4 dir=$WORK/$2
   print "\n== $app"
@@ -126,21 +154,9 @@ build_app() {
            $pnpm --filter @cairn/web build:app >> $WORK/logs/$app.log 2>&1 \
         && cd apps/web/ios/App && upload cairn App.xcodeproj App $build) ;;
     wholestory)
-      # Firebase's Google file is not in the repo: kept once in $WORK, made by the Firebase CLI if missing.
-      local gfile=$WORK/GoogleService-Info-wholestory.plist
-      if [[ ! -s $gfile ]]; then
-        local fid=$(npx -y firebase-tools apps:list IOS --project whole-story-lrl --json 2>/dev/null \
-          | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const a=(JSON.parse(s).result||[]).find(x=>x.namespace==='com.liferegulationlab.wholestory');process.stdout.write(a?a.appId:'')})")
-        [[ -n $fid ]] && npx -y firebase-tools apps:sdkconfig IOS "$fid" --project whole-story-lrl -o $gfile >> $WORK/logs/$app.log 2>&1
-      fi
-      local reversed=$(/usr/libexec/PlistBuddy -c 'Print :REVERSED_CLIENT_ID' $gfile 2>/dev/null || true)
-      if [[ -z $reversed ]]; then say "$app: NOT UPLOADED (no Firebase Google file with a REVERSED_CLIENT_ID; sign in to the Firebase CLI on the Mac)"; return; fi
-      (cd $dir && npm ci --no-audit --no-fund >> $WORK/logs/$app.log 2>&1 \
-        && npx vite build >> $WORK/logs/$app.log 2>&1 \
-        && npx cap sync ios >> $WORK/logs/$app.log 2>&1 \
-        && cp $gfile ios/App/App/GoogleService-Info.plist \
-        && sed -i '' "s/GOOGLE_REVERSED_CLIENT_ID/$reversed/" ios/App/App/Info.plist \
-        && cd ios/App && upload wholestory App.xcodeproj App $build) ;;
+      (firebase_app $app $dir whole-story-lrl com.liferegulationlab.wholestory $build) ;;
+    dealtwith)
+      (firebase_app $app $dir dealt-with-lrl com.liferegulationlab.dealtwith $build) ;;
   esac
   local result=$?
   # The upload ran in a subshell, so read the number from the newest archive it made.
