@@ -336,6 +336,22 @@ def drive_backup(drive, repos):
     return "Copied %s to Google Drive, My Drive/%s (git folders, build output and the Tautenay and HSC folder left out)." % (short(BACKUP_SOURCE), BACKUP_FOLDER), True
 
 
+LEDGER_DIR = os.path.join(BACKUP_SOURCE, "Ledger")
+
+
+def ledger_backup():
+    """Ledger's records live in ~/Ledger, which is not copied anywhere. Its own backup encrypts them into
+    "Ledger backups" in Claude project files and tests the result, so the copies below take it off the Mac."""
+    script = os.path.join(LEDGER_DIR, "ledger.py")
+    if not os.path.isfile(script):
+        return "Ledger not found, so its backup was skipped.", True
+    code, out, err = run([sys.executable, script, "backup"], cwd=LEDGER_DIR, timeout=900)
+    detail = (out or err or "").strip().splitlines()
+    if code == 0:
+        return "Ledger backed up and its restore test passed.", True
+    return "**Ledger** backup did not pass: %s" % (detail[-1] if detail else "no reason given"), False
+
+
 def media_upload(repos):
     """One-way copy of the project folders into R2. rclone copy adds and updates, never removes."""
     rclone = shutil.which("rclone")
@@ -487,6 +503,7 @@ def main():
     drive = drive_root()
     backup_line, backup_ok = drive_backup(drive, repos) if update else ("Copy to Google Drive skipped (report only).", True)
     gdrive, gdrive_error = cloud_changes(drive, "Google Drive", day_ago, skip=(BACKUP_FOLDER,))
+    ledger_line, ledger_ok = ledger_backup() if update else ("Ledger backup skipped (report only).", True)
     media_line, media_ok = media_upload(repos) if update else ("Media copy to Cloudflare R2 skipped (report only).", True)
     down_line, down_ok = media_download() if update else ("Nothing brought down from Cloudflare R2 (report only).", True)
 
@@ -500,6 +517,8 @@ def main():
                 needs.append("**%s #%d** is a draft pull request; it should be marked ready for review." % (p["repository"]["name"], p["number"]))
     if not backup_ok:
         needs.append(backup_line)
+    if not ledger_ok:
+        needs.append(ledger_line)
     if not media_ok:
         needs.append(media_line)
     if not down_ok:
@@ -603,6 +622,7 @@ def main():
         w.append("Nothing else changed in Google Drive in the last day.\n")
 
     w.append("## Cloudflare R2\n")
+    w.append(ledger_line + "\n")
     w.append(media_line + "\n")
     w.append(down_line + "\n")
 
