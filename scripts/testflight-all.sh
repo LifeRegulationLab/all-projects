@@ -34,7 +34,7 @@ APPS=(
   "headuntangled   coaching-studio  main                          10"
   "cairn           cairn            main                          4"
   "wholestory      whole-story      main                          8"
-  "dealtwith       life-admin       main                          4"
+  "dealtwith       life-admin       main                          5"
 )
 if (( $# )); then WANT=($@); else WANT=(pace mull regulate headuntangled cairn wholestory dealtwith); fi
 
