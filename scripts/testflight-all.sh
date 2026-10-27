@@ -31,7 +31,7 @@ APPS=(
   "pace            pace             main                          13"
   "mull            mull             claude/project-thread-ni92pc  9"
   "regulate        regulate         main                          11"
-  "headuntangled   coaching-studio  main                          10"
+  "headuntangled   coaching-studio  main                          11"
   "cairn           cairn            main                          4"
   "wholestory      whole-story      main                          8"
   "dealtwith       life-admin       main                          5"
