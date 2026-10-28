@@ -27,6 +27,12 @@ Where each project stands (builds, TestFlight, open pull requests, next steps) i
 | [claude-mods](https://github.com/LifeRegulationLab/claude-mods) | Claude Code mods: auto-model, background-board, clean-view, context-gauge, cost-meter, dashboard, morning-brief, production-tracker, usage-limits. |
 | [LifeRegulationLab](https://github.com/LifeRegulationLab/LifeRegulationLab) | GitHub org profile repo. |
 
+Tools used alongside the projects, not ours:
+
+| Tool | What it is |
+| --- | --- |
+| [Postiz](https://github.com/gitroomhq/postiz-app) | Open-source social media scheduler, self-hosted in Docker on the Mac at http://localhost:4007. Install steps: [docs/postiz-install-mac.md](docs/postiz-install-mac.md). |
+
 Each repo has its own `CLAUDE.md` with its working rules; read that before changing anything in it.
 
 Keep this table current when a project is added, renamed or retired.
