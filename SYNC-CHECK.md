@@ -1,6 +1,6 @@
 # Sync check
 
-Stuart Houlihan. Run 27 October 2026, 21:00.
+Stuart Houlihan. Run 28 October 2026, 21:00.
 
 Each evening the Mac compares every project folder with GitHub, brings a folder up to date when that is safe, and writes this page. It never deletes, merges or sends code. [STATUS.md](STATUS.md) is the longer account of where each app stands, last updated 23 October 2026, 19:45 (Guernsey).
 
@@ -17,6 +17,7 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 - **Desktop/Projects/Head-Untangled** has 10 changed files not saved to GitHub, and is 11 commits behind GitHub.
 - **Desktop/Projects/Head-Untangled** has 1 commit not sent to GitHub.
 - **Desktop/Projects/Head-Untangled** has 1 commit on branch claude/nifty-curie-fb2af0 that is not on GitHub.
+- **Desktop/Projects/Head-Untangled** has 1 commit on branch claude/vigilant-greider-ca9fd3 that is not on GitHub.
 - **Desktop/Projects/Head-Untangled** has 1 commit on branch claude/youthful-galileo-3a6029 that is not on GitHub.
 - **Desktop/regulate** has 1 commit on branch reset-merge-check that is not on GitHub.
 - **Desktop/regulate-testflight** has 1 changed file not saved to GitHub.
@@ -28,9 +29,7 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 
 ## Brought up to date tonight
 
-- Desktop/Claude project files/headuntangled-site: 1 new commit from GitHub.
-- Desktop/Claude project files/life-admin: 1 new commit from GitHub.
-- Desktop/Claude project files/liferegulationlab-site: 1 new commit from GitHub.
+- Desktop/Claude project files/headuntangled-site: 4 new commits from GitHub.
 
 ## Every folder
 
@@ -40,10 +39,10 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 | Desktop/Claude project files/Cairn/cairn-app | cairn | main | 2 behind | 1 / 1 | 24 Oct |
 | Desktop/Claude project files/dashboards | dashboards | main | level with GitHub | 0 / 0 | 17 Oct |
 | Desktop/Claude project files/desk-store | desk | main | 9 behind | 1 / 2 | 24 Oct |
-| Desktop/Claude project files/headuntangled-site | headuntangled-site | main | brought up to date (1) | 0 / 0 | 25 Oct |
-| Desktop/Claude project files/Ledger | Ledger | main | level with GitHub | 0 / 0 | 27 Oct |
-| Desktop/Claude project files/life-admin | life-admin | main | brought up to date (1) | 0 / 4 | 26 Oct |
-| Desktop/Claude project files/liferegulationlab-site | liferegulationlab-site | master | brought up to date (1) | 0 / 0 | 26 Oct |
+| Desktop/Claude project files/headuntangled-site | headuntangled-site | main | brought up to date (4) | 0 / 0 | 27 Oct |
+| Desktop/Claude project files/Ledger | Ledger | main | level with GitHub | 0 / 0 | 28 Oct |
+| Desktop/Claude project files/life-admin | life-admin | main | level with GitHub | 0 / 4 | 26 Oct |
+| Desktop/Claude project files/liferegulationlab-site | liferegulationlab-site | master | level with GitHub | 0 / 0 | 27 Oct |
 | Desktop/Claude project files/mull | mull | claude/project-thread-ni92pc | level with GitHub | 0 / 1 | 26 Oct |
 | Desktop/Claude project files/mull-watch-build | mull | claude/project-thread-ni92pc | level with GitHub | 0 / 3 | 26 Oct |
 | Desktop/Claude project files/pace/pace | pace | main | level with GitHub | 0 / 1 | 26 Oct |
@@ -56,7 +55,7 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 | Desktop/Projects/head-untangled-studio | head-untangled-studio | main | level with GitHub | 0 / 0 | 27 Oct |
 | Desktop/regulate | regulate | claude/store-plus | level with GitHub | 0 / 1 | 13 Oct |
 | Desktop/regulate-testflight | regulate | HEAD | fixed copy, not on a branch | 1 / 2 | 24 Oct |
-| ~/all-projects | all-projects | main | level with GitHub | 0 / 0 | 27 Oct |
+| ~/all-projects | all-projects | main | level with GitHub | 0 / 0 | 28 Oct |
 
 Notes:
 
@@ -97,10 +96,7 @@ On GitHub but not on the Mac:
 
 Desktop and Documents sync is off, so iCloud does not hold a copy of the Desktop; GitHub is the backup for project folders.
 
-Changed in iCloud Drive in the last day. If any of this belongs to a project, it should also be in that project's folder:
-
-- Downloads (27 Oct 06:51)
-- PACE 2 (26 Oct 23:25)
+Nothing changed in iCloud Drive in the last day.
 
 ## Google Drive
 
