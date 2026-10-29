@@ -1,6 +1,6 @@
 # Sync check
 
-Stuart Houlihan. Run 28 October 2026, 21:00.
+Stuart Houlihan. Run 29 October 2026, 21:00.
 
 Each evening the Mac compares every project folder with GitHub, brings a folder up to date when that is safe, and writes this page. It never deletes, merges or sends code. [STATUS.md](STATUS.md) is the longer account of where each app stands, last updated 23 October 2026, 19:45 (Guernsey).
 
@@ -21,15 +21,14 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 - **Desktop/Projects/Head-Untangled** has 1 commit on branch claude/youthful-galileo-3a6029 that is not on GitHub.
 - **Desktop/regulate** has 1 commit on branch reset-merge-check that is not on GitHub.
 - **Desktop/regulate-testflight** has 1 changed file not saved to GitHub.
+- **head-untangled-kit #9** is a draft pull request; it should be marked ready for review.
+- **all-projects #35** is a draft pull request; it should be marked ready for review.
+- **home-hub #1** is a draft pull request; it should be marked ready for review.
 - **head-untangled-kit #7** is a draft pull request; it should be marked ready for review.
 - **coaching-studio #16** is a draft pull request; it should be marked ready for review.
 - **content-engine #1** is a draft pull request; it should be marked ready for review.
 - **regulate #39** is a draft pull request; it should be marked ready for review.
-- **STATUS.md** has not been updated since changes reached GitHub in: coaching-studio, content-engine, Desk, head-untangled-kit, head-untangled-studio, headuntangled-site, Ledger, life-admin, liferegulationlab-site, picture-talk.
-
-## Brought up to date tonight
-
-- Desktop/Claude project files/headuntangled-site: 4 new commits from GitHub.
+- **STATUS.md** has not been updated since changes reached GitHub in: coaching-studio, content-engine, Desk, head-untangled-kit, head-untangled-studio, headuntangled-site, home-hub, Ledger, life-admin, liferegulationlab-site, picture-talk.
 
 ## Every folder
 
@@ -39,7 +38,7 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 | Desktop/Claude project files/Cairn/cairn-app | cairn | main | 2 behind | 1 / 1 | 24 Oct |
 | Desktop/Claude project files/dashboards | dashboards | main | level with GitHub | 0 / 0 | 17 Oct |
 | Desktop/Claude project files/desk-store | desk | main | 9 behind | 1 / 2 | 24 Oct |
-| Desktop/Claude project files/headuntangled-site | headuntangled-site | main | brought up to date (4) | 0 / 0 | 27 Oct |
+| Desktop/Claude project files/headuntangled-site | headuntangled-site | main | level with GitHub | 0 / 0 | 28 Oct |
 | Desktop/Claude project files/Ledger | Ledger | main | level with GitHub | 0 / 0 | 28 Oct |
 | Desktop/Claude project files/life-admin | life-admin | main | level with GitHub | 0 / 4 | 26 Oct |
 | Desktop/Claude project files/liferegulationlab-site | liferegulationlab-site | master | level with GitHub | 0 / 0 | 27 Oct |
@@ -55,13 +54,14 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 | Desktop/Projects/head-untangled-studio | head-untangled-studio | main | level with GitHub | 0 / 0 | 27 Oct |
 | Desktop/regulate | regulate | claude/store-plus | level with GitHub | 0 / 1 | 13 Oct |
 | Desktop/regulate-testflight | regulate | HEAD | fixed copy, not on a branch | 1 / 2 | 24 Oct |
-| ~/all-projects | all-projects | main | level with GitHub | 0 / 0 | 28 Oct |
+| ~/all-projects | all-projects | superseded-videos-rule | level with GitHub | 0 / 0 | 29 Oct |
 
 Notes:
 
 - Desktop/Claude project files/Voice Studio: working branch claude/project-thread-2529dx: 2 commits not yet in main.
 - Desktop/regulate: working branch claude/store-plus: 4 commits not yet in main.
 - Desktop/regulate-testflight: fixed copy for a build; GitHub's main is 19 commits newer.
+- ~/all-projects: working branch superseded-videos-rule: 1 commit not yet in main.
 - cairn is on the Mac 2 times: Desktop/cairn, Desktop/Claude project files/Cairn/cairn-app.
 - mull is on the Mac 2 times: Desktop/Claude project files/mull, Desktop/Claude project files/mull-watch-build.
 - regulate is on the Mac 2 times: Desktop/regulate, Desktop/regulate-testflight.
@@ -72,16 +72,20 @@ Open pull requests:
 
 - all-projects #1: Add coaching-studio to the project index
 - all-projects #2: Add content-engine to the project index
+- all-projects #35: Add Home hub to the project list (draft)
 - cairn #1: docs: DPIA pack for the hosted service
 - coaching-studio #16: Add Untangling Burnout to the app, with a six-lesson route and My burnout map (draft)
 - content-engine #1: Add LRL marketing workforce and review board (draft)
 - head-untangled-kit #7: Shorts S26–S33: intimacy cuts and women's hidden struggles (draft)
+- head-untangled-kit #9: Shorts S48–S56: men's scripts, and Tom added to the cast (draft)
 - headuntangled-site #1: Courses page, and show the email address
+- home-hub #1: Showcase: never read real devices while the made-up house is shown (draft)
 - pace #2: Share with Coach
 - regulate #39: Plus inside the phone apps, through RevenueCat (draft)
 
 On GitHub but not on the Mac:
 
+- home-hub (last change 2026-10-28)
 - picture-talk (last change 2026-10-27)
 - notion-alternative (last change 2026-10-17)
 - formulation-assistant (last change 2026-09-16)
