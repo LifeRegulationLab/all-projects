@@ -29,3 +29,15 @@ Only four Desktop folders reach the cloud. A file anywhere else stays on the Mac
 - Name dated sets `<what>-YYYY-MM-DD` (for example `brand/2026-10-24/`) so the newest is easy to find.
 - Files saved from the cloud arrive in `Desktop/From cloud`. Move each one into its project folder above; that folder is not copied back up.
 - Never leave project files loose on the Desktop or in Downloads.
+
+## Replaced Shorts and videos (Stuart, 29 Oct 2026)
+
+When Stuart approves an amended Short or video, the version it replaces is deleted straight away, so it can never go out again:
+
+- every copy of the old file: `Desktop/Projects`, `Desktop/From cloud`, `lrl-media` (including `from-cloud/`; for that file this overrides the never-delete line above) and Metricool's media library;
+- every scheduled post that uses the old file (Metricool or anywhere else): switched to the approved file, or cancelled;
+- every published post of the old version, on every platform (YouTube, TikTok, Pinterest, Facebook, Instagram).
+
+Only the version the approved one replaces, and only after Stuart has approved the new one. Before booking any post, check the file is the approved version. Note what was removed in `STATUS.md`. If an old version is already live with a problem, hide it at once (Private / Only me / a secret board); an old version with no problem is left alone.
+
+Why: on 29 Oct 2026 an old cut of "Why rest isn't working" (Maya holding what looks like a hip flask; the approved cut has a coffee cup) went out on four platforms, because the old file was still in the folders and was booked instead of the approved one.
