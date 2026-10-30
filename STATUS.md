@@ -54,6 +54,12 @@ Merged today: Pace #5 and #6, Mull #1, Desk #7, #8 and #9, Regulate #53 and #54,
 | Coach (private) | Claude project files/private-coach, not in git | Stuart's own app. Mull is the App Store version. |
 | Ledger | ledger, main | 26 October: Ledger 2 (PR #1): LLC and personal books, double entry, reconciled balances, iPhone receipts through iCloud Drive, encrypted backups each evening, and a tax centre for the US, Guernsey and the UK. Private, on the Mac only. |
 
+## Replaced Shorts and videos
+
+| Date | Replaced | Removed |
+| --- | --- | --- |
+| 30 Oct 2026 | Head Untangled Shorts S49–S56: Stuart approved new openings (the key fact first) at 06:31 | The old cuts are gone from `lrl-media/from-cloud/Head-Untangled/shorts/s48-s57-2026-10-29/` (replaced in place) and from project files. All 32 Metricool bookings (TikTok, YouTube, Pinterest, Facebook, 31 Oct–3 Nov) now use the new files, each checked against the approved file. The old cuts were never posted. They stay in Metricool's media library, because the connector can't delete from it. |
+
 ## Folders on the Mac
 
 | Folder | Repo | State on 23 October |
