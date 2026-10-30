@@ -1,6 +1,6 @@
 # Sync check
 
-Stuart Houlihan. Run 29 October 2026, 21:00.
+Stuart Houlihan. Run 30 October 2026, 21:00.
 
 Each evening the Mac compares every project folder with GitHub, brings a folder up to date when that is safe, and writes this page. It never deletes, merges or sends code. [STATUS.md](STATUS.md) is the longer account of where each app stands, last updated 23 October 2026, 19:45 (Guernsey).
 
@@ -14,8 +14,9 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 - **Desktop/coaching-studio** has 1 changed file not saved to GitHub.
 - **Desktop/coaching-studio** is on branch claude/project-thread-ni92pc, which is already merged; GitHub's main is 18 commits newer.
 - **Desktop/content-engine** has 3 changed files not saved to GitHub, and is 2 commits behind GitHub.
-- **Desktop/Projects/Head-Untangled** has 10 changed files not saved to GitHub, and is 11 commits behind GitHub.
+- **Desktop/Projects/Head-Untangled** has 10 changed files not saved to GitHub, and is 12 commits behind GitHub.
 - **Desktop/Projects/Head-Untangled** has 1 commit not sent to GitHub.
+- **Desktop/Projects/Head-Untangled** has 1 commit on branch claude/brave-goldberg-37b03d that is not on GitHub.
 - **Desktop/Projects/Head-Untangled** has 1 commit on branch claude/nifty-curie-fb2af0 that is not on GitHub.
 - **Desktop/Projects/Head-Untangled** has 1 commit on branch claude/vigilant-greider-ca9fd3 that is not on GitHub.
 - **Desktop/Projects/Head-Untangled** has 1 commit on branch claude/youthful-galileo-3a6029 that is not on GitHub.
@@ -50,7 +51,7 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 | Desktop/claude-mods | claude-mods | main | level with GitHub | 0 / 0 | 14 Oct |
 | Desktop/coaching-studio | coaching-studio | claude/project-thread-ni92pc | level with GitHub | 1 / 1 | 24 Oct |
 | Desktop/content-engine | content-engine | main | 2 behind | 3 / 6 | 23 Oct |
-| Desktop/Projects/Head-Untangled | head-untangled-kit | main | 1 to send, 11 behind | 10 / 74 | 24 Oct |
+| Desktop/Projects/Head-Untangled | head-untangled-kit | main | 1 to send, 12 behind | 10 / 74 | 24 Oct |
 | Desktop/Projects/head-untangled-studio | head-untangled-studio | main | level with GitHub | 0 / 0 | 27 Oct |
 | Desktop/regulate | regulate | claude/store-plus | level with GitHub | 0 / 1 | 13 Oct |
 | Desktop/regulate-testflight | regulate | HEAD | fixed copy, not on a branch | 1 / 2 | 24 Oct |
@@ -61,7 +62,7 @@ Notes:
 - Desktop/Claude project files/Voice Studio: working branch claude/project-thread-2529dx: 2 commits not yet in main.
 - Desktop/regulate: working branch claude/store-plus: 4 commits not yet in main.
 - Desktop/regulate-testflight: fixed copy for a build; GitHub's main is 19 commits newer.
-- ~/all-projects: working branch superseded-videos-rule: 1 commit not yet in main.
+- ~/all-projects: working branch superseded-videos-rule: 2 commits not yet in main.
 - cairn is on the Mac 2 times: Desktop/cairn, Desktop/Claude project files/Cairn/cairn-app.
 - mull is on the Mac 2 times: Desktop/Claude project files/mull, Desktop/Claude project files/mull-watch-build.
 - regulate is on the Mac 2 times: Desktop/regulate, Desktop/regulate-testflight.
