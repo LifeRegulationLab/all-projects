@@ -6,7 +6,7 @@
 #   cd ~/all-projects && git pull -q && zsh scripts/testflight-all.sh
 #
 # Or only some apps:  zsh scripts/testflight-all.sh pace mull
-# Apps: pace, mull, regulate, headuntangled, cairn, wholestory, dealtwith. Not Desk (personal) and not Picture Talk (own script).
+# Apps: pace, mull, regulate, headuntangled, cairn, wholestory, dealtwith, dashboard (Stuart's own, internal testing only). Not Desk (personal) and not Picture Talk (own script).
 #
 # Each app is built in a clean copy under ~/testflight-builds (outside the Desktop, so not copied to
 # the cloud), so the Desktop folders are never changed. Build numbers are given on the command line;
@@ -35,8 +35,9 @@ APPS=(
   "cairn           cairn            main                          4"
   "wholestory      whole-story      main                          8"
   "dealtwith       life-admin       main                          5"
+  "dashboard       dashboards       main                          1"
 )
-if (( $# )); then WANT=($@); else WANT=(pace mull regulate headuntangled cairn wholestory dealtwith); fi
+if (( $# )); then WANT=($@); else WANT=(pace mull regulate headuntangled cairn wholestory dealtwith dashboard); fi
 
 EXPORT=$WORK/ExportOptions.plist
 cat > $EXPORT <<EOF
@@ -136,6 +137,8 @@ build_app() {
       (cd $dir && upload pace Pace.xcodeproj PaceMobile $build) ;;
     mull)
       (cd $dir && upload mull Coach.xcodeproj Coach $build) ;;
+    dashboard)
+      (cd $dir/ios && upload dashboard Dashboard.xcodeproj Dashboard $build) ;;
     regulate)
       (cd $dir && npm ci --no-audit --no-fund >> $WORK/logs/$app.log 2>&1 \
         && npx vite build --mode shell >> $WORK/logs/$app.log 2>&1 \
