@@ -1,6 +1,6 @@
 # Sync check
 
-Stuart Houlihan. Run 1 November 2026, 21:00.
+Stuart Houlihan. Run 2 November 2026, 21:00.
 
 Each evening the Mac compares every project folder with GitHub, brings a folder up to date when that is safe, and writes this page. It never deletes, merges or sends code. [STATUS.md](STATUS.md) is the longer account of where each app stands, last updated 23 October 2026, 19:45 (Guernsey).
 
@@ -12,9 +12,9 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 - **Desktop/Claude project files/Voice Studio** is 2 commits behind GitHub; not updated because it also has commits of its own.
 - **Desktop/Claude project files/whole-story/whole-story** has 2 changed files not saved to GitHub, and is 7 commits behind GitHub.
 - **Desktop/coaching-studio** has 1 changed file not saved to GitHub.
-- **Desktop/coaching-studio** is on branch claude/project-thread-ni92pc, which is already merged; GitHub's main is 18 commits newer.
+- **Desktop/coaching-studio** is on branch claude/project-thread-ni92pc, which is already merged; GitHub's main is 20 commits newer.
 - **Desktop/content-engine** has 3 changed files not saved to GitHub, and is 2 commits behind GitHub.
-- **Desktop/Projects/Head-Untangled** has 11 changed files not saved to GitHub, and is 29 commits behind GitHub.
+- **Desktop/Projects/Head-Untangled** has 11 changed files not saved to GitHub, and is 60 commits behind GitHub.
 - **Desktop/Projects/Head-Untangled** has 1 commit not sent to GitHub.
 - **Desktop/Projects/Head-Untangled** has 1 commit on branch claude/brave-boyd-5bf849 that is not on GitHub.
 - **Desktop/Projects/Head-Untangled** has 1 commit on branch claude/brave-goldberg-37b03d that is not on GitHub.
@@ -23,25 +23,21 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 - **Desktop/Projects/Head-Untangled** has 1 commit on branch claude/optimistic-mcclintock-9fb039 that is not on GitHub.
 - **Desktop/Projects/Head-Untangled** has 1 commit on branch claude/vigilant-greider-ca9fd3 that is not on GitHub.
 - **Desktop/Projects/Head-Untangled** has 1 commit on branch claude/youthful-galileo-3a6029 that is not on GitHub.
+- **Desktop/Projects/head-untangled-studio** has 16 commits on branch stage-1 that are not on GitHub.
+- **Desktop/Projects/head-untangled-studio-stage1** has 10 changed files not saved to GitHub.
+- **Desktop/Projects/head-untangled-studio-stage1** has 16 commits not sent to GitHub.
 - **Desktop/regulate** has 1 commit on branch reset-merge-check that is not on GitHub.
 - **Desktop/regulate-testflight** has 1 changed file not saved to GitHub.
-- **headuntangled-site #15** is a draft pull request; it should be marked ready for review.
-- **picture-talk #14** is a draft pull request; it should be marked ready for review.
-- **all-projects #38** is a draft pull request; it should be marked ready for review.
-- **head-untangled-kit #16** is a draft pull request; it should be marked ready for review.
-- **head-untangled-kit #9** is a draft pull request; it should be marked ready for review.
-- **all-projects #35** is a draft pull request; it should be marked ready for review.
-- **home-hub #1** is a draft pull request; it should be marked ready for review.
-- **head-untangled-kit #7** is a draft pull request; it should be marked ready for review.
-- **coaching-studio #16** is a draft pull request; it should be marked ready for review.
+- **Desk #21** is a draft pull request; it should be marked ready for review.
 - **content-engine #1** is a draft pull request; it should be marked ready for review.
 - **regulate #39** is a draft pull request; it should be marked ready for review.
-- **STATUS.md** has not been updated since changes reached GitHub in: content-engine, dashboards, head-untangled-kit, head-untangled-studio, headuntangled-site, pace, picture-talk.
+- **STATUS.md** has not been updated since changes reached GitHub in: coaching-studio, content-engine, dashboards, Desk, head-untangled-kit, head-untangled-studio, headuntangled-site, home-hub, pace, picture-talk.
 
 ## Brought up to date tonight
 
-- Desktop/Claude project files/pace/pace: 2 new commits from GitHub.
-- Desktop/Projects/head-untangled-studio: 47 new commits from GitHub.
+- Desktop/Claude project files/dashboards: 3 new commits from GitHub.
+- Desktop/Claude project files/headuntangled-site: 2 new commits from GitHub.
+- Desktop/Projects/head-untangled-studio: 15 new commits from GitHub.
 
 ## Every folder
 
@@ -49,31 +45,32 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 | --- | --- | --- | --- | --- | --- |
 | Desktop/cairn | cairn | main | level with GitHub | 0 / 1 | 25 Oct |
 | Desktop/Claude project files/Cairn/cairn-app | cairn | main | 2 behind | 1 / 1 | 24 Oct |
-| Desktop/Claude project files/dashboards | dashboards | main | level with GitHub | 0 / 0 | 01 Nov |
+| Desktop/Claude project files/dashboards | dashboards | main | brought up to date (3) | 0 / 0 | 01 Nov |
 | Desktop/Claude project files/desk-store | desk | main | 9 behind | 1 / 2 | 24 Oct |
-| Desktop/Claude project files/headuntangled-site | headuntangled-site | main | level with GitHub | 0 / 0 | 31 Oct |
+| Desktop/Claude project files/headuntangled-site | headuntangled-site | main | brought up to date (2) | 0 / 0 | 31 Oct |
 | Desktop/Claude project files/Ledger | Ledger | main | level with GitHub | 0 / 0 | 28 Oct |
 | Desktop/Claude project files/life-admin | life-admin | main | level with GitHub | 0 / 4 | 26 Oct |
 | Desktop/Claude project files/liferegulationlab-site | liferegulationlab-site | master | level with GitHub | 0 / 0 | 27 Oct |
 | Desktop/Claude project files/mull | mull | claude/project-thread-ni92pc | level with GitHub | 0 / 1 | 26 Oct |
 | Desktop/Claude project files/mull-watch-build | mull | claude/project-thread-ni92pc | level with GitHub | 0 / 3 | 26 Oct |
-| Desktop/Claude project files/pace/pace | pace | main | brought up to date (2) | 0 / 1 | 26 Oct |
+| Desktop/Claude project files/pace/pace | pace | main | level with GitHub | 0 / 1 | 01 Nov |
 | Desktop/Claude project files/Voice Studio | voice-studio | claude/project-thread-2529dx | 1 to send, 2 behind | 0 / 0 | 24 Oct |
 | Desktop/Claude project files/whole-story/whole-story | whole-story | main | 7 behind | 2 / 3 | 24 Oct |
 | Desktop/claude-mods | claude-mods | main | level with GitHub | 0 / 0 | 14 Oct |
 | Desktop/coaching-studio | coaching-studio | claude/project-thread-ni92pc | level with GitHub | 1 / 1 | 24 Oct |
 | Desktop/content-engine | content-engine | main | 2 behind | 3 / 6 | 23 Oct |
 | Desktop/pace | pace | main | level with GitHub | 0 / 0 | 01 Nov |
-| Desktop/Projects/Head-Untangled | head-untangled-kit | main | 1 to send, 29 behind | 11 / 94 | 24 Oct |
-| Desktop/Projects/head-untangled-studio | head-untangled-studio | main | brought up to date (47) | 0 / 0 | 01 Nov |
-| Desktop/Projects/head-untangled-studio-stage1 | head-untangled-studio | stage-1 | level with GitHub | 0 / 0 | 01 Nov |
+| Desktop/Projects/Head-Untangled | head-untangled-kit | main | 1 to send, 60 behind | 11 / 94 | 24 Oct |
+| Desktop/Projects/head-untangled-studio | head-untangled-studio | main | brought up to date (15) | 0 / 0 | 01 Nov |
+| Desktop/Projects/head-untangled-studio-stage1 | head-untangled-studio | stage-1 | 16 to send | 10 / 1 | 02 Nov |
 | Desktop/regulate | regulate | claude/store-plus | level with GitHub | 0 / 1 | 13 Oct |
 | Desktop/regulate-testflight | regulate | HEAD | fixed copy, not on a branch | 1 / 2 | 24 Oct |
-| ~/all-projects | all-projects | main | level with GitHub | 0 / 0 | 01 Nov |
+| ~/all-projects | all-projects | main | level with GitHub | 0 / 0 | 02 Nov |
 
 Notes:
 
 - Desktop/Claude project files/Voice Studio: working branch claude/project-thread-2529dx: 2 commits not yet in main.
+- Desktop/Projects/head-untangled-studio-stage1: working branch stage-1: 16 commits not yet in main.
 - Desktop/regulate: working branch claude/store-plus: 4 commits not yet in main.
 - Desktop/regulate-testflight: fixed copy for a build; GitHub's main is 19 commits newer.
 - cairn is on the Mac 2 times: Desktop/cairn, Desktop/Claude project files/Cairn/cairn-app.
@@ -86,27 +83,17 @@ Notes:
 
 Open pull requests:
 
-- all-projects #1: Add coaching-studio to the project index
-- all-projects #2: Add content-engine to the project index
-- all-projects #35: Add Home hub to the project list (draft)
-- all-projects #38: STATUS: note the replaced S62–S79 Shorts (printable line, 31 Oct) (draft)
 - cairn #1: docs: DPIA pack for the hosted service
-- coaching-studio #16: Add Untangling Burnout to the app, with a six-lesson route and My burnout map (draft)
 - content-engine #1: Add LRL marketing workforce and review board (draft)
-- head-untangled-kit #7: Shorts S26–S33: intimacy cuts and women's hidden struggles (draft)
-- head-untangled-kit #9: Shorts S48–S56: men's scripts, and Tom added to the cast (draft)
-- head-untangled-kit #16: Untangling Your Cycle: plan, scripts, narration records and the cut pipeline (draft)
+- Desk #21: Make Word drop-downs and date boxes work in Pages (draft)
 - headuntangled-site #1: Courses page, and show the email address
-- headuntangled-site #15: Printables page: Untangling Your Cycle course on sale at £29 (draft)
-- home-hub #1: Showcase: never read real devices while the made-up house is shown (draft)
 - pace #2: Share with Coach
-- picture-talk #14: AI help function: check the sign-in with the server key (draft)
 - regulate #39: Plus inside the phone apps, through RevenueCat (draft)
 
 On GitHub but not on the Mac:
 
-- picture-talk (last change 2026-10-31)
-- home-hub (last change 2026-10-28)
+- home-hub (last change 2026-11-02)
+- picture-talk (last change 2026-11-02)
 - notion-alternative (last change 2026-10-17)
 - formulation-assistant (last change 2026-09-16)
 - regulate-v1-archive (last change 2026-04-24)
@@ -122,15 +109,15 @@ Desktop and Documents sync is off, so iCloud does not hold a copy of the Desktop
 
 Changed in iCloud Drive in the last day. If any of this belongs to a project, it should also be in that project's folder:
 
-- PACE 2 (01 Nov 20:47)
-- Downloads (01 Nov 17:08)
-- PACE (01 Nov 08:45)
+- Downloads (02 Nov 16:46)
 
 ## Google Drive
 
 Copied Desktop/Claude project files to Google Drive, My Drive/Mac backup (git folders, build output and the Tautenay and HSC folder left out).
 
-Nothing else changed in Google Drive in the last day.
+Changed in Google Drive in the last day, apart from the backup. If any of this belongs to a project, it should also be in that project's folder:
+
+- LRL Marketing Workforce (02 Nov 08:46)
 
 ## Cloudflare R2
 
