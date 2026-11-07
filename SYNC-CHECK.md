@@ -1,6 +1,6 @@
 # Sync check
 
-Stuart Houlihan. Run 6 November 2026, 21:00.
+Stuart Houlihan. Run 7 November 2026, 21:00.
 
 Each evening the Mac compares every project folder with GitHub, brings a folder up to date when that is safe, and writes this page. It never deletes, merges or sends code. [STATUS.md](STATUS.md) is the longer account of where each app stands, last updated 23 October 2026, 19:45 (Guernsey).
 
@@ -32,8 +32,7 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 - **Desktop/regulate-phase-48** has 1 commit on branch reset-merge-check that is not on GitHub.
 - **Desktop/regulate-phase-48** is on branch claude/phase-48, which is already merged; GitHub's main is 1 commit newer.
 - **Desktop/regulate-testflight** has 1 changed file not saved to GitHub.
-- **life-admin #18** is a draft pull request; it should be marked ready for review.
-- **life-admin #17** is a draft pull request; it should be marked ready for review.
+- **pace #26** is a draft pull request; it should be marked ready for review.
 - **pace #25** is a draft pull request; it should be marked ready for review.
 - **regulate #76** is a draft pull request; it should be marked ready for review.
 - **Desk #21** is a draft pull request; it should be marked ready for review.
@@ -41,7 +40,7 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 
 ## Brought up to date tonight
 
-- Desktop/Claude project files/pace/pace: 2 new commits from GitHub.
+- Desktop/Claude project files/life-admin: 4 new commits from GitHub.
 
 ## Every folder
 
@@ -53,25 +52,25 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 | Desktop/Claude project files/desk-store | desk | main | 11 behind | 1 / 2 | 24 Oct |
 | Desktop/Claude project files/headuntangled-site | headuntangled-site | main | level with GitHub | 0 / 0 | 02 Nov |
 | Desktop/Claude project files/Ledger | Ledger | main | level with GitHub | 0 / 0 | 05 Nov |
-| Desktop/Claude project files/life-admin | life-admin | main | level with GitHub | 0 / 4 | 05 Nov |
+| Desktop/Claude project files/life-admin | life-admin | main | brought up to date (4) | 0 / 4 | 05 Nov |
 | Desktop/Claude project files/liferegulationlab-site | liferegulationlab-site | master | level with GitHub | 0 / 0 | 27 Oct |
 | Desktop/Claude project files/mull | mull | claude/moss-glow | level with GitHub | 0 / 0 | 05 Nov |
 | Desktop/Claude project files/mull-watch-build | mull | claude/project-thread-ni92pc | level with GitHub | 0 / 3 | 05 Nov |
-| Desktop/Claude project files/pace/pace | pace | main | brought up to date (2) | 0 / 1 | 05 Nov |
+| Desktop/Claude project files/pace/pace | pace | main | level with GitHub | 0 / 1 | 06 Nov |
 | Desktop/Claude project files/Voice Studio | voice-studio | claude/project-thread-2529dx | 1 to send, 2 behind | 0 / 0 | 24 Oct |
 | Desktop/Claude project files/whole-story/whole-story | whole-story | main | 9 behind | 2 / 3 | 24 Oct |
 | Desktop/claude-mods | claude-mods | main | level with GitHub | 0 / 0 | 14 Oct |
 | Desktop/coaching-studio | coaching-studio | claude/project-thread-ni92pc | level with GitHub | 1 / 1 | 24 Oct |
 | Desktop/content-engine | content-engine | main | 19 behind | 3 / 6 | 23 Oct |
 | Desktop/pace | pace | main | level with GitHub | 0 / 0 | 06 Nov |
-| Desktop/Projects/Head-Untangled | head-untangled-kit | main | 1 to send, 60 behind | 11 / 94 | 24 Oct |
+| Desktop/Projects/Head-Untangled | head-untangled-kit | main | 1 to send, 60 behind | 11 / 98 | 24 Oct |
 | Desktop/Projects/head-untangled-studio | head-untangled-studio | main | level with GitHub | 11 / 0 | 03 Nov |
 | Desktop/Projects/head-untangled-studio-stage1 | head-untangled-studio | stage-1 | level with GitHub | 1 / 0 | 03 Nov |
 | Desktop/regulate | regulate | testflight-49 | 4 behind | 1 / 1 | 06 Nov |
 | Desktop/regulate-phase-47 | regulate | claude/phase-47 | level with GitHub | 0 / 0 | 05 Nov |
 | Desktop/regulate-phase-48 | regulate | claude/phase-48 | level with GitHub | 0 / 0 | 05 Nov |
 | Desktop/regulate-testflight | regulate | HEAD | fixed copy, not on a branch | 1 / 2 | 24 Oct |
-| ~/all-projects | all-projects | main | level with GitHub | 0 / 0 | 05 Nov |
+| ~/all-projects | all-projects | main | level with GitHub | 0 / 0 | 06 Nov |
 
 Notes:
 
@@ -93,10 +92,9 @@ Open pull requests:
 - cairn #1: docs: DPIA pack for the hosted service
 - Desk #21: Make Word drop-downs and date boxes work in Pages (draft)
 - headuntangled-site #1: Courses page, and show the email address
-- life-admin #17: Make Dealt With clearer and add benefits and money tracking (draft)
-- life-admin #18: Update 17: calmer screens, money and benefits records (draft)
 - pace #2: Share with Coach
 - pace #25: Make Moss's tap reliable, put Now first on Today, simplify Focus (draft)
+- pace #26: Ship companion sets as built-in folders; add Ewan's 64 s loop and 12 new lines (draft)
 - regulate #39: Plus inside the phone apps, through RevenueCat
 - regulate #76: Sections 49 and 50: tidier pages, five sections and a bar along the bottom (draft)
 
@@ -119,9 +117,8 @@ Desktop and Documents sync is off, so iCloud does not hold a copy of the Desktop
 
 Changed in iCloud Drive in the last day. If any of this belongs to a project, it should also be in that project's folder:
 
-- PACE 2 (06 Nov 20:34)
-- Downloads (06 Nov 18:54)
-- Head Untangled Shorts (06 Nov 06:55)
+- Head Untangled Shorts (07 Nov 12:58)
+- Downloads (07 Nov 10:02)
 
 ## Google Drive
 
