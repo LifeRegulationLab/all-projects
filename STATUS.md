@@ -50,7 +50,7 @@ Merged today: Pace #5 and #6, Mull #1, Desk #7, #8 and #9, Regulate #53 and #54,
 | Content engine | content-engine, main | 23 October: design and stage 1 plan for Head Untangled Studio, the app that queues and reviews products. |
 | Head Untangled kit | head-untangled-kit, main | New repo 23 October for the kit folder (Desktop/Projects/Head-Untangled). |
 | Claude Code mods | claude-mods, main | Last change 14 October. |
-| Dashboards | dashboards, main | Last change 17 October. |
+| Dashboards | dashboards, main | 10 November (PR #24, merged; Worker deployed): app health is live. The Dashboard app's Apps card has an entry for Regulate, Cairn, Mull, Pace, the Head Untangled app, Picture Talk and Desk, from counts read out of each app's database, and all seven are answering. Each of the three databases has a counts-only function, `dashboard_health`, that answers only to its own secret (kept in `Desktop/Private - not in cloud/`). A database not answering on two checks in a row sends a push. Regulate's side (regulate #81, and its `types.ts` in #82) merged 10 November. Still open: cairn #11 (run `pnpm db:test` with Docker, then merge). Both functions are already applied to the live databases. |
 | Coach (private) | Claude project files/private-coach, not in git | Stuart's own app. Mull is the App Store version. |
 | Ledger | ledger, main | 26 October: Ledger 2 (PR #1): LLC and personal books, double entry, reconciled balances, iPhone receipts through iCloud Drive, encrypted backups each evening, and a tax centre for the US, Guernsey and the UK. Private, on the Mac only. |
 
