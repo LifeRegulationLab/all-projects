@@ -4,6 +4,16 @@ Stuart Houlihan. Last updated 23 October 2026, 19:45 (Guernsey).
 
 Checked against GitHub, App Store Connect notes from today and the folders on the Mac. Update this file at the end of any sitting that changes a build, a pull request or a TestFlight group. The Mac's evening check, [SYNC-CHECK.md](SYNC-CHECK.md), compares every folder with GitHub at 21:00 each day and says when this file has fallen behind.
 
+## Bringing the apps together around My manual (10 November 2026)
+
+Stuart asked for the apps to feed the person's manual in Regulate, with Moss keeping your place. Cairn and Picture Talk are left out. Three draft pull requests, none merged, none seen in a browser yet:
+
+- **regulate #83** (phase 54): Talk to Moss goes back to the page you came from and can be told that page's name on a tick; a new page, Your apps, under My manual, counts the notes each app has added. `npm run check` passes.
+- **coaching-studio #21**: "Add to My manual in Regulate" on My plan, for the "what helps me" lines the person ticks. `npm run check` passes.
+- **mull #13**: `Moss/server/0003_moss_head_untangled.sql` for the shared server (Stuart applies it; Head Untangled's notes are refused until then), and one Swift line not yet compiled.
+
+Still to do: Moss's chat inside Pace, Head Untangled and Dealt With (they still open Mull); one sign-in across Mull and Pace; Dealt With adding notes; one Plus across the apps (waits on the Paid Apps Agreement). Once coaching-studio #21 is out, Regulate's Your apps page should stop saying Head Untangled cannot add notes.
+
 ## Waiting on Stuart (business)
 
 - App Store Connect, Business page: the **W-9** tax form and the **Paid Apps Agreement** are outstanding. Paid Apps is needed before any subscription or paid app (Mull, Regulate Plus) can go on sale.
