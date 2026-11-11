@@ -30,12 +30,33 @@ Stuart asked for the apps to feed the person's manual in Regulate, with Moss kee
 Waiting on Stuart:
 
 - New builds for Regulate and Pace: `cd ~/all-projects && git pull -q && zsh scripts/testflight-all.sh regulate pace`. Then one phone check: the bar, large text, Level 1, Talk to Moss's notice, and a step sent from Moss arriving in Pace.
-- Decide: move Regulate onto the shared server (see the session of 11 November), and the bundle price.
+- Decide: the bundle price.
 - Turn passkeys on: Supabase dashboard, Authentication, Passkeys, for `regulate-preview` then the live project; then `VITE_PASSKEYS_ON=true` in Netlify.
 - Data protection: the assessments gain the page name sent to Moss, the household agreement (it may name people you live with) and the step sent to Pace.
 - Regulate's `CLAUDE.md` still says migrations are applied by the owner; on 11 November Stuart asked Claude to apply them. The rule is his to change.
 
 Still to do: Moss's chat inside Pace, Head Untangled and Dealt With (they still open Mull); one sign-in across Mull and Pace; Dealt With adding notes; one Plus across the apps (waits on the Paid Apps Agreement); passkeys inside the phone apps; the glass look in the other apps.
+
+## Regulate moved to the shared server (11 November 2026, evening)
+
+Stuart asked for the databases to be brought together, after both servers were counted and held only his own test accounts.
+
+- **Live since 20:19:** regulate.liferegulationlab.com reads the shared Life Regulation Lab project (`xgeacgbeiivcbrgdfpbf`, Zurich). Regulate's records are in their own schema there, `regulate`; nothing of Regulate's is in `public` (regulate #95, spec section 64). Stuart signed in and saw his record.
+- **Copied across** to Stuart's shared sign-in: profile and settings, levels, sleep and body logs, journal, medications and doses, cycle dates, pantry, manual. Not copied: 17 reports, AI request counts, the old hotmail test account.
+- **The London project** (`bpjqmohsjddkffkqyscv`) is untouched and unused. Stuart pauses it when he is happy. Do not delete it.
+- **Changed for a shared sign-in:** a person starts in Regulate through `regulate.join()`; deleting removes the Regulate record and keeps the sign-in if another app uses it; the unused-account check measures Regulate's own use; `/privacy` says Zurich and the shared sign-in. `public.lrl_still_used` on the shared server now counts a Regulate profile.
+- **Set on the shared project:** Regulate's return address, its Apple bundle id and two Google client ids, passkeys for regulate.liferegulationlab.com, `regulate` among the exposed schemas, sign-ups open (`regulate.service_state.signups_open`).
+- **Follow-up fixes** (regulate #96, coaching-studio #22): Cycle always listed under Record and switched on from its own tab; a whole spanner for the Tools icon; Your apps free for everyone with the apps behind "About the apps"; an Open link for Head Untangled.
+
+Still to do:
+
+- Phone builds: Regulate (uses the shared server from the build after #95), Pace (first compile of pace #28), Head Untangled (the `headuntangled://` link). Then the phone check: existing record there, a new entry survives a restart, Apple and Google sign-in in the phone app, a step from Moss arriving in Pace with its preparation list.
+- **Dashboards:** the Dashboard app still reads Regulate's counts from the London project, so they are now stale. Its Worker needs the shared project's address and the `regulate` schema for `dashboard_health`.
+- **Sign-in emails** on the shared project go through Supabase's built-in sender (a few an hour). Set up the Resend sender before more people join.
+- Stuart's impact assessment and transfer assessment: London becomes Zurich, and the sign-in is shared.
+- `types.ts` in regulate was written by hand for the `regulate` schema; regenerate on the Mac: `npx supabase gen types typescript --project-id xgeacgbeiivcbrgdfpbf --schema regulate`.
+- Netlify, lrl-regulate: the Local development value of `SUPABASE_SERVICE_ROLE_KEY` (the preview project's) is not marked secret.
+- Not started: Dealt With and Whole Story onto the shared server (both are on Firebase); one sign-in screen across apps; one purchase for the collection; the Regulate sign-in standing in for the Moss link.
 
 ## Waiting on Stuart (business)
 
