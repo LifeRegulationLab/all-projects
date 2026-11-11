@@ -71,6 +71,10 @@ fetch() {
 upload() {
   local name=$1 project=$2 scheme=$3 build=$4 log=$WORK/logs/$1.log tries=0
   : > $log
+  # Start after the highest number already tried for this app on this Mac, so numbers that
+  # App Store Connect is known to have are not tried again.
+  local last=$(ls $WORK/archives 2>/dev/null | sed -nE "s/^$name-([0-9]+)\.xcarchive$/\1/p" | sort -n | tail -1)
+  if [[ -n $last ]] && (( last >= build )); then build=$((last + 1)); fi
   while (( tries < 6 )); do
     local archive=$WORK/archives/$name-$build.xcarchive
     rm -rf $archive $WORK/export/$name
@@ -92,6 +96,7 @@ upload() {
       return 0
     fi
     if tail -40 $log | grep -qiE 'bundle version|previously uploaded|DUPLICATE|already been used|already exists'; then
+      print "  App Store Connect already has $name build $build: trying $((build + 1)). This is expected, not a fault."
       build=$((build + 1)); tries=$((tries + 1))
     else
       return 1
