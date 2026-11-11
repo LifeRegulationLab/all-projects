@@ -58,6 +58,14 @@ Still to do:
 - Netlify, lrl-regulate: the Local development value of `SUPABASE_SERVICE_ROLE_KEY` (the preview project's) is not marked secret.
 - Not started: Dealt With and Whole Story onto the shared server (both are on Firebase); one sign-in screen across apps; one purchase for the collection; the Regulate sign-in standing in for the Moss link.
 
+## The letter, Pace and back (11 November 2026, late)
+
+- **A fault found and put right on the shared server.** Until tonight no app could send a step to Pace or save a Moss note: the server refused every one (the rule counted its own table). Both tables were empty. Fixed in Moss server 0005 (mull #15, applied and tested).
+- **Dealt With** (life-admin #21, merged): a step put into Pace now says sent, added to Pace, finished in Pace or done here, as separate things. Sending again never makes two tasks. `dealtwith://item/<id>` opens the letter in the phone app.
+- **Pace** (pace #29, open): tells the server when a task from another app is finished or un-ticked, and has "Open in Dealt With". Written without a Swift compiler: merge only after the Build check on the Mac passes.
+- **Regulate** #99 merged (Moss: where a long talk is sent from, Start again asks first).
+- Dealt With's Moss link is still the older one (the email of a Mull or Pace account). Now that Dealt With uses the shared sign-in it could use that instead; not done.
+
 ## Waiting on Stuart (business)
 
 - App Store Connect, Business page: the **W-9** tax form and the **Paid Apps Agreement** are outstanding. Paid Apps is needed before any subscription or paid app (Mull, Regulate Plus) can go on sale.
