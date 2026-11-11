@@ -4,6 +4,33 @@ Stuart Houlihan. Last updated 23 October 2026, 19:45 (Guernsey).
 
 Checked against GitHub, App Store Connect notes from today and the folders on the Mac. Update this file at the end of any sitting that changes a build, a pull request or a TestFlight group. The Mac's evening check, [SYNC-CHECK.md](SYNC-CHECK.md), compares every folder with GitHub at 21:00 each day and says when this file has fallen behind.
 
+## Bringing the apps together around My manual (10 and 11 November 2026)
+
+Stuart asked for the apps to feed the person's manual in Regulate, with Moss keeping your place. Cairn and Picture Talk are left out. All of this is merged; none of it has been tried on a phone yet.
+
+**Regulate** (main, phases 54 to 58; `npm run check` passes, 1,664 tests):
+
+- #83: Talk to Moss goes back to the page you came from, and can be told that page's name on a tick. Your apps, under My manual, counts the notes each app has added.
+- #84: How to raise things, in Tools.
+- #85 and #86: Household agreement, in Share. Migration 0024 is applied to `regulate-preview` and the live project.
+- #87: the sign-in page opens with Apple and Google; the email code is behind a small link. Passkeys are built and switched off.
+- #88: "Put a step in Pace" in Talk to Moss.
+- #89: the glass look (a soft glow, glass cards, a floating bar, one mint accent). Dimmed screens stay plain.
+
+**Head Untangled app** (coaching-studio #21, merged): "Add to My manual in Regulate" on My plan. Not in a build yet.
+
+**Mull** (mull #13 and #14, merged): notes from Head Untangled are named correctly (one Swift line, never compiled: build Mull once before the next upload), and the two Moss server changes are recorded.
+
+**Shared Moss server:** `0003` (notes from Head Untangled) and `0004` (a step from Regulate) are applied.
+
+Waiting on Stuart:
+
+- Turn passkeys on: Supabase dashboard, Authentication, Passkeys, for `regulate-preview` then the live project; then `VITE_PASSKEYS_ON=true` in Netlify.
+- Data protection: the assessments gain the page name sent to Moss, the household agreement (it may name people you live with) and the step sent to Pace.
+- Regulate's `CLAUDE.md` still says migrations are applied by the owner; on 11 November Stuart asked Claude to apply them. The rule is his to change.
+
+Still to do: Moss's chat inside Pace, Head Untangled and Dealt With (they still open Mull); one sign-in across Mull and Pace; Dealt With adding notes; one Plus across the apps (waits on the Paid Apps Agreement); passkeys inside the phone apps; the glass look in the other apps.
+
 ## Waiting on Stuart (business)
 
 - App Store Connect, Business page: the **W-9** tax form and the **Paid Apps Agreement** are outstanding. Paid Apps is needed before any subscription or paid app (Mull, Regulate Plus) can go on sale.
