@@ -8,7 +8,7 @@ Checked against GitHub, App Store Connect notes from today and the folders on th
 
 Stuart asked for the apps to feed the person's manual in Regulate, with Moss keeping your place. Cairn and Picture Talk are left out. All of this is merged; none of it has been tried on a phone yet.
 
-**Regulate** (main, phases 54 to 58; `npm run check` passes, 1,664 tests):
+**Regulate** (main, phases 54 to 63; `npm run check` passes, 1,682 tests):
 
 - #83: Talk to Moss goes back to the page you came from, and can be told that page's name on a tick. Your apps, under My manual, counts the notes each app has added.
 - #84: How to raise things, in Tools.
@@ -16,6 +16,10 @@ Stuart asked for the apps to feed the person's manual in Regulate, with Moss kee
 - #87: the sign-in page opens with Apple and Google; the email code is behind a small link. Passkeys are built and switched off.
 - #88: "Put a step in Pace" in Talk to Moss.
 - #89: the glass look (a soft glow, glass cards, a floating bar, one mint accent). Dimmed screens stay plain.
+
+- #90 to #94 (later on 11 November): a way back from Talk to Moss while loading; Plus named in three benefits; Moss's own AI allowance; each section's own colour again; "Put a step in Pace" can start from selected words; Your apps on Today as "Get something done", opening on three jobs (deal with a letter, start something, talk it through); Talk to Moss needs its own tick before first use, with a switch in Settings; the sign-in consent names Talk to Moss and the household agreement, so every account agrees again once; Plus for testers (migration 0025, applied to both projects: `select public.grant_tester_plus('email');` in the SQL editor).
+
+**Pace** (pace #28, merged, never compiled: the next build is the first compile): stays signed in with no signal; a hand-over arrives with its Get ready list and finish line.
 
 **Head Untangled app** (coaching-studio #21, merged): "Add to My manual in Regulate" on My plan. Not in a build yet.
 
@@ -25,6 +29,8 @@ Stuart asked for the apps to feed the person's manual in Regulate, with Moss kee
 
 Waiting on Stuart:
 
+- New builds for Regulate and Pace: `cd ~/all-projects && git pull -q && zsh scripts/testflight-all.sh regulate pace`. Then one phone check: the bar, large text, Level 1, Talk to Moss's notice, and a step sent from Moss arriving in Pace.
+- Decide: move Regulate onto the shared server (see the session of 11 November), and the bundle price.
 - Turn passkeys on: Supabase dashboard, Authentication, Passkeys, for `regulate-preview` then the live project; then `VITE_PASSKEYS_ON=true` in Netlify.
 - Data protection: the assessments gain the page name sent to Moss, the household agreement (it may name people you live with) and the step sent to Pace.
 - Regulate's `CLAUDE.md` still says migrations are applied by the owner; on 11 November Stuart asked Claude to apply them. The rule is his to change.
