@@ -30,7 +30,7 @@ mkdir -p $WORK/logs "$NOTES"
 APPS=(
   "pace            pace             main                          13"
   "mull            mull             claude/project-thread-ni92pc  9"
-  "regulate        regulate         main                          11"
+  "regulate        regulate         main                          17"
   "headuntangled   coaching-studio  main                          11"
   "cairn           cairn            main                          4"
   "wholestory      whole-story      main                          8"
