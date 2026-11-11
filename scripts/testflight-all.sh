@@ -119,6 +119,9 @@ firebase_app() {
     print "  no REVERSED_CLIENT_ID in $gfile: switch on Google sign-in in Firebase ($project), delete the file and run again" >> $WORK/logs/$app.log
     return 1
   fi
+  # Not a secret: the shared sign-in server needs this id in its Google client ids for Google
+  # sign-in to work inside this app (life-admin docs/SHARED-SERVER.md).
+  print "  $app iPhone Google client id: $(/usr/libexec/PlistBuddy -c 'Print :CLIENT_ID' $gfile 2>/dev/null || print 'not found')"
   cd $dir && npm ci --no-audit --no-fund >> $WORK/logs/$app.log 2>&1 \
     && npx vite build >> $WORK/logs/$app.log 2>&1 \
     && npx cap sync ios >> $WORK/logs/$app.log 2>&1 \
