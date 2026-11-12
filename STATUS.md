@@ -52,11 +52,35 @@ Still to do:
 
 - Phone builds: Regulate (uses the shared server from the build after #95), Pace (first compile of pace #28), Head Untangled (the `headuntangled://` link). Then the phone check: existing record there, a new entry survives a restart, Apple and Google sign-in in the phone app, a step from Moss arriving in Pace with its preparation list.
 - **Dashboards:** the Dashboard app still reads Regulate's counts from the London project, so they are now stale. Its Worker needs the shared project's address and the `regulate` schema for `dashboard_health`.
-- **Sign-in emails** on the shared project go through Supabase's built-in sender (a few an hour). Set up the Resend sender before more people join.
+- **Sign-in emails** on the shared project already go through MailerSend (checked 12 November 2026); nothing to change. The earlier line here, saying Supabase's built-in sender, was wrong.
 - Stuart's impact assessment and transfer assessment: London becomes Zurich, and the sign-in is shared.
 - `types.ts` in regulate was written by hand for the `regulate` schema; regenerate on the Mac: `npx supabase gen types typescript --project-id xgeacgbeiivcbrgdfpbf --schema regulate`.
 - Netlify, lrl-regulate: the Local development value of `SUPABASE_SERVICE_ROLE_KEY` (the preview project's) is not marked secret.
 - Not started: Dealt With and Whole Story onto the shared server (both are on Firebase); one sign-in screen across apps; one purchase for the collection; the Regulate sign-in standing in for the Moss link.
+
+## Regulate: the ledger (12 November 2026)
+
+One line for each thing built in the design review and the two code reviews. "Web" is regulate.liferegulationlab.com, which takes every merge to `main`. "Phone" is the newest TestFlight build that holds it. "Unverified" means nobody has looked at it working on a real screen; it does not mean broken. Every line passed `npm run check` and its preview build before merging; that is the only evidence unless the last column says more.
+
+| Feature | Source | Migration | Web | Phone | Evidence | Last checked |
+| --- | --- | --- | --- | --- | --- | --- |
+| Google sign-in in the phone app (nonce) | #100 | none | live | built | tests; Stuart: Google and Apple work in Dealt With | 12 Nov, Regulate phone unverified |
+| Settings is a list, not the set-up questions | #101 | none | live | built | tests | 12 Nov, unverified by eye |
+| Review fixes: settings saved one value at a time, membership in every rule, consent fails closed, request size limit | #102 | 0027 applied | live | built | tests, SQL tests, trial on the live database | 12 Nov |
+| AI allowance: a place taken before the model is called | #103, #105 | 0028, 0029 applied | live | built | tests, SQL tests | 12 Nov |
+| Back to Tools from a tool; Moss settings wording | #104 | none | live | built | tests | 12 Nov, unverified by eye |
+| Plan and billing always visible; Manual wording; all 200 notes counted | #106 | none | live | **not built** | tests | 12 Nov, unverified by eye |
+| Tools in four groups, Help now, favourites; Food folds; light theme; opaque cards | #107 | none | live | **not built** | tests; light theme seen in screenshots | 12 Nov |
+| History: 30, 90, 365 days and custom, coverage, compare, a day's entries, saved views | #108 | 0030 applied | live | **not built** | tests, SQL tests | 12 Nov, unverified by eye |
+| Support cards with where each came from, recorded uses, earlier wording | #109 | 0031 applied | live | **not built** | tests, SQL tests | 12 Nov, unverified by eye |
+| Shared notes say what they are about; a switch for each app's new notes | #110, mull #16, coaching-studio #23 | Moss 0006 applied | live | **not built** (Regulate and Head Untangled) | tests | 12 Nov, no note has yet travelled between two real apps |
+| Recognition: a short line, optional counts, or nothing | #111 | 0032 applied | when merged | **not built** | tests, SQL tests | 12 Nov, unverified by eye |
+
+**Not migrated:** the 17 generated reports on the London project were not copied to the shared server on 11 November. They are still on London (`bpjqmohsjddkffkqyscv`, untouched). AI request counts were not copied either.
+
+**Asked for in the design review and not built:** milestones and a collection (recognition); the wider two-column layout on a wide screen; a sleep bar chart and cycle markers in History; saved versions of the whole Manual; "Sign out everywhere"; Pace sending task outcomes, Mull sending approved insights and Dealt With sending context to the Manual; buying inside the phone apps (regulate #39, a month old, needs the stores and RevenueCat set up); LRL Collection as something that can be bought.
+
+**Needs a person:** one Regulate phone build and one Head Untangled build, then a pass on the phone; `types.ts` regenerated on the Mac (it has been edited by hand since 0026).
 
 ## The letter, Pace and back (11 November 2026, late)
 
