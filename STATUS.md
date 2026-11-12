@@ -50,8 +50,8 @@ Stuart asked for the databases to be brought together, after both servers were c
 
 Still to do:
 
-- Phone builds: Regulate (uses the shared server from the build after #95), Pace (first compile of pace #28), Head Untangled (the `headuntangled://` link). Then the phone check: existing record there, a new entry survives a restart, Apple and Google sign-in in the phone app, a step from Moss arriving in Pace with its preparation list.
-- **Dashboards:** the Dashboard app still reads Regulate's counts from the London project, so they are now stale. Its Worker needs the shared project's address and the `regulate` schema for `dashboard_health`.
+- Phone builds: all eight apps were built and uploaded on 12 November (Regulate 0.1.0 (26), then once more after regulate #105). Still to do on a phone: existing record there, a new entry survives a restart, Apple and Google sign-in in the Regulate phone app, a step from Moss arriving in Pace with its preparation list.
+- **Dashboards:** fixed in code on 12 November (dashboards #25, with regulate migration 0034): the Worker reads the shared project's `regulate` schema and shows each AI allowance on its own. It is not live until `npx wrangler deploy` is run in `worker/`; until then the card still shows the London project's stale counts.
 - **Sign-in emails** on the shared project already go through MailerSend (checked 12 November 2026); nothing to change. The earlier line here, saying Supabase's built-in sender, was wrong.
 - Stuart's impact assessment and transfer assessment: London becomes Zurich, and the sign-in is shared.
 - `types.ts` in regulate was written by hand for the `regulate` schema; regenerate on the Mac: `npx supabase gen types typescript --project-id xgeacgbeiivcbrgdfpbf --schema regulate`.
@@ -76,9 +76,13 @@ One line for each thing built in the design review and the two code reviews. "We
 | Shared notes say what they are about; a switch for each app's new notes | #110, mull #16, coaching-studio #23 | Moss 0006 applied | live | **not built** (Regulate and Head Untangled) | tests | 12 Nov, no note has yet travelled between two real apps |
 | Recognition: a short line, optional counts, or nothing | #111 | 0032 applied | live | **not built** | tests, SQL tests | 12 Nov, unverified by eye |
 | AI allowance shown on Plan and billing; LRL Collection named as not on sale yet | #112 | none | live | **not built** | tests | 12 Nov, unverified by eye |
-| Plus inside the phone apps (RevenueCat), brought up to date; replaces #39 | #113 | none | when merged | **not built**; the first build with the new plugin | tests with stand-ins only | 12 Nov; no real purchase, no restore, no phone build |
+| Plus inside the phone apps (RevenueCat), brought up to date; replaces #39 | #113 | none | live (merged 21:38 UTC) | **not built**; the first build with the new plugin | tests with stand-ins only | 12 Nov; no real purchase, no restore, no phone build |
+| Recheck fixes: History counts the whole last day; a reworded card starts with its own evidence; card forms keep what was typed until saved | #114 | 0033, 0034 applied | live | **not built** | tests, SQL tests (new `card_wording.sql`) | 12 Nov, unverified by eye |
+| Dashboard reads Regulate from the shared server, each AI allowance on its own | dashboards #25 | 0034 applied | **not deployed** (`npx wrangler deploy`) | no app build needed | tests; database checked (schema exposed, wrong key refused) | 12 Nov, no live reading seen |
 
 **Not migrated:** the 17 generated reports on the London project were not copied to the shared server on 11 November. They are still on London (`bpjqmohsjddkffkqyscv`, untouched). AI request counts were not copied either.
+
+**From the recheck of 12 November, not done:** selected support cards in the shared guide and reports; the landing page showing the Manual and History; the platform list (Android cycle import is not built); the 17 London reports archived or reconciled; Head Untangled, Pace, Mull, Dealt With and Whole Story contributions beyond what is in the table; "I support someone" in Your apps. Native purchase, restore and Collection access are unproven until the stores are set up.
 
 **Asked for in the design review and not built:** milestones and a collection (recognition); the wider two-column layout on a wide screen; a sleep bar chart and cycle markers in History; saved versions of the whole Manual; "Sign out everywhere"; Pace sending task outcomes, Mull sending approved insights and Dealt With sending context to the Manual; LRL Collection as something that can be bought (it is named on Plan and billing as not on sale yet).
 
