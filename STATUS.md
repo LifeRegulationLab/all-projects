@@ -74,11 +74,15 @@ One line for each thing built in the design review and the two code reviews. "We
 | History: 30, 90, 365 days and custom, coverage, compare, a day's entries, saved views | #108 | 0030 applied | live | **not built** | tests, SQL tests | 12 Nov, unverified by eye |
 | Support cards with where each came from, recorded uses, earlier wording | #109 | 0031 applied | live | **not built** | tests, SQL tests | 12 Nov, unverified by eye |
 | Shared notes say what they are about; a switch for each app's new notes | #110, mull #16, coaching-studio #23 | Moss 0006 applied | live | **not built** (Regulate and Head Untangled) | tests | 12 Nov, no note has yet travelled between two real apps |
-| Recognition: a short line, optional counts, or nothing | #111 | 0032 applied | when merged | **not built** | tests, SQL tests | 12 Nov, unverified by eye |
+| Recognition: a short line, optional counts, or nothing | #111 | 0032 applied | live | **not built** | tests, SQL tests | 12 Nov, unverified by eye |
+| AI allowance shown on Plan and billing; LRL Collection named as not on sale yet | #112 | none | live | **not built** | tests | 12 Nov, unverified by eye |
+| Plus inside the phone apps (RevenueCat), brought up to date; replaces #39 | #113 | none | when merged | **not built**; the first build with the new plugin | tests with stand-ins only | 12 Nov; no real purchase, no restore, no phone build |
 
 **Not migrated:** the 17 generated reports on the London project were not copied to the shared server on 11 November. They are still on London (`bpjqmohsjddkffkqyscv`, untouched). AI request counts were not copied either.
 
-**Asked for in the design review and not built:** milestones and a collection (recognition); the wider two-column layout on a wide screen; a sleep bar chart and cycle markers in History; saved versions of the whole Manual; "Sign out everywhere"; Pace sending task outcomes, Mull sending approved insights and Dealt With sending context to the Manual; buying inside the phone apps (regulate #39, a month old, needs the stores and RevenueCat set up); LRL Collection as something that can be bought.
+**Asked for in the design review and not built:** milestones and a collection (recognition); the wider two-column layout on a wide screen; a sleep bar chart and cycle markers in History; saved versions of the whole Manual; "Sign out everywhere"; Pace sending task outcomes, Mull sending approved insights and Dealt With sending context to the Manual; LRL Collection as something that can be bought (it is named on Plan and billing as not on sale yet).
+
+**Buying inside the phone apps** is in the code (regulate #113) and switched off. Before anything can be bought: the two products in App Store Connect and Google Play, the RevenueCat project with its `plus` entitlement, the two public RevenueCat keys in `.env.shell`, `REVENUECAT_SECRET_KEY` and `REVENUECAT_WEBHOOK_SECRET` in Netlify, the webhook address, and `VITE_PLUS_ON_SALE` true (regulate `docs/DEPLOY.md`). If the next Regulate phone build fails on the RevenueCat package, that is #113.
 
 **Needs a person:** one Regulate phone build and one Head Untangled build, then a pass on the phone; `types.ts` regenerated on the Mac (it has been edited by hand since 0026).
 
