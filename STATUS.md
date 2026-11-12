@@ -51,7 +51,7 @@ Stuart asked for the databases to be brought together, after both servers were c
 Still to do:
 
 - Phone builds: all eight apps were built and uploaded on 12 November (Regulate 0.1.0 (26), then once more after regulate #105). Still to do on a phone: existing record there, a new entry survives a restart, Apple and Google sign-in in the Regulate phone app, a step from Moss arriving in Pace with its preparation list.
-- **Dashboards:** fixed in code on 12 November (dashboards #25, with regulate migration 0034): the Worker reads the shared project's `regulate` schema and shows each AI allowance on its own. It is not live until `npx wrangler deploy` is run in `worker/`; until then the card still shows the London project's stale counts.
+- **Dashboards:** fixed and deployed on 12 November (dashboards #25, regulate migration 0034). The Regulate card reads the shared project's `regulate` schema; seen working on Stuart's phone at 22:34 UTC. The "Counted from" value is cut off on a phone and could be shortened.
 - **Sign-in emails** on the shared project already go through MailerSend (checked 12 November 2026); nothing to change. The earlier line here, saying Supabase's built-in sender, was wrong.
 - Stuart's impact assessment and transfer assessment: London becomes Zurich, and the sign-in is shared.
 - `types.ts` in regulate was written by hand for the `regulate` schema; regenerate on the Mac: `npx supabase gen types typescript --project-id xgeacgbeiivcbrgdfpbf --schema regulate`.
@@ -78,7 +78,7 @@ One line for each thing built in the design review and the two code reviews. "We
 | AI allowance shown on Plan and billing; LRL Collection named as not on sale yet | #112 | none | live | **not built** | tests | 12 Nov, unverified by eye |
 | Plus inside the phone apps (RevenueCat), brought up to date; replaces #39 | #113 | none | live (merged 21:38 UTC) | **not built**; the first build with the new plugin | tests with stand-ins only | 12 Nov; no real purchase, no restore, no phone build |
 | Recheck fixes: History counts the whole last day; a reworded card starts with its own evidence; card forms keep what was typed until saved | #114 | 0033, 0034 applied | live | **not built** | tests, SQL tests (new `card_wording.sql`) | 12 Nov, unverified by eye |
-| Dashboard reads Regulate from the shared server, each AI allowance on its own | dashboards #25 | 0034 applied | **not deployed** (`npx wrangler deploy`) | no app build needed | tests; database checked (schema exposed, wrong key refused) | 12 Nov, no live reading seen |
+| Dashboard reads Regulate from the shared server, each AI allowance on its own | dashboards #25 | 0034 applied | deployed 12 Nov, 22:3x UTC | no app build needed | tests; **seen working on Stuart's phone**: Counted from the shared project, Counted at 22:34 UTC, Moss 0 of 200, other AI 1 of 200 | 12 Nov |
 
 **Not migrated:** the 17 generated reports on the London project were not copied to the shared server on 11 November. They are still on London (`bpjqmohsjddkffkqyscv`, untouched). AI request counts were not copied either.
 
