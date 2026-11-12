@@ -78,7 +78,7 @@ One line for each thing built in the design review and the two code reviews. "We
 | AI allowance shown on Plan and billing; LRL Collection named as not on sale yet | #112 | none | live | **not built** | tests | 12 Nov, unverified by eye |
 | Plus inside the phone apps (RevenueCat), brought up to date; replaces #39 | #113 | none | live (merged 21:38 UTC) | **not built**; the first build with the new plugin | tests with stand-ins only | 12 Nov; no real purchase, no restore, no phone build |
 | Recheck fixes: History counts the whole last day; a reworded card starts with its own evidence; card forms keep what was typed until saved | #114 | 0033, 0034 applied | live | **not built** | tests, SQL tests (new `card_wording.sql`) | 12 Nov, unverified by eye |
-| Dashboard reads Regulate from the shared server, each AI allowance on its own | dashboards #25 | 0034 applied | **not deployed** (`npx wrangler deploy`) | needs a Dashboard build for nothing: the Worker serves it | tests; database checked (schema exposed, wrong key refused) | 12 Nov, no live reading seen |
+| Dashboard reads Regulate from the shared server, each AI allowance on its own | dashboards #25 | 0034 applied | **not deployed** (`npx wrangler deploy`) | no app build needed | tests; database checked (schema exposed, wrong key refused) | 12 Nov, no live reading seen |
 
 **Not migrated:** the 17 generated reports on the London project were not copied to the shared server on 11 November. They are still on London (`bpjqmohsjddkffkqyscv`, untouched). AI request counts were not copied either.
 
