@@ -4,6 +4,17 @@ Stuart Houlihan. Last updated 23 October 2026, 19:45 (Guernsey).
 
 Checked against GitHub, App Store Connect notes from today and the folders on the Mac. Update this file at the end of any sitting that changes a build, a pull request or a TestFlight group. The Mac's evening check, [SYNC-CHECK.md](SYNC-CHECK.md), compares every folder with GitHub at 21:00 each day and says when this file has fallen behind.
 
+## LRL HQ (13 November 2026)
+
+Stuart asked for the HQ in his build map of 13 November ("One private HQ for you and your work") to be made. It is built inside Head Untangled Studio at `/hq` and is in head-untangled-studio #5, a draft, not merged and not deployed.
+
+- **Built:** three workspaces (Personal, LRL, Head Untangled); Today, Work, Review, Files and More; three workflows ("What needs me today?", "What changed across LRL?", "Prepare a Head Untangled series brief") and a Mac worker check; a £10 monthly cap for HQ's AI work; approval bound to one exact version; backup and restore.
+- **Evidence:** 302 tests pass (the Studio's 268 unchanged, 34 for HQ); the database function tested on a local Postgres; every screen and button tried in a browser on a local server. Nothing has run against real services and it has not been seen on a phone.
+- **Nothing live was changed.** No migration applied, no Vercel setting changed. HQ publishes nothing and has no setting that could.
+- **Waiting on Stuart:** choose the Supabase project for HQ's records and follow `docs/hq/SETUP.md` in the Studio repo (records, then a Mistral key, a read-only GitHub token, Google's two read-only scopes, the Mac worker token). Each is optional after the first; HQ names what is not connected.
+- **Not built:** handing jobs to Content Engine from the Mac worker; any real delivery destination; the other requests on page 3 of the map. The list is in the Studio's `docs/hq/README.md`.
+- **Beside the open Studio PRs:** #2 edits three of the same lines (layout, middleware, cron list); whichever merges second needs them put back by hand.
+
 ## Bringing the apps together around My manual (10 and 11 November 2026)
 
 Stuart asked for the apps to feed the person's manual in Regulate, with Moss keeping your place. Cairn and Picture Talk are left out. All of this is merged; none of it has been tried on a phone yet.
