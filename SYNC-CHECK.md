@@ -1,6 +1,6 @@
 # Sync check
 
-Stuart Houlihan. Run 14 November 2026, 21:00.
+Stuart Houlihan. Run 15 November 2026, 21:00.
 
 Each evening the Mac compares every project folder with GitHub, brings a folder up to date when that is safe, and writes this page. It never deletes, merges or sends code. [STATUS.md](STATUS.md) is the longer account of where each app stands, last updated 23 October 2026, 19:45 (Guernsey).
 
@@ -14,6 +14,8 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 - **Desktop/Claude project files/whole-story/whole-story** has 2 changed files not saved to GitHub, and is 9 commits behind GitHub.
 - **Desktop/coaching-studio** has 1 changed file not saved to GitHub.
 - **Desktop/coaching-studio** is on branch claude/project-thread-ni92pc, which is already merged; GitHub's main is 28 commits newer.
+- **Desktop/orbit** has 1 changed file not saved to GitHub.
+- **Desktop/orbit** has 9 commits not sent to GitHub.
 - **Desktop/Projects/Head-Untangled** has 11 changed files not saved to GitHub, and is 60 commits behind GitHub.
 - **Desktop/Projects/Head-Untangled** has 1 commit not sent to GitHub.
 - **Desktop/Projects/Head-Untangled** has 1 commit on branch claude/brave-boyd-5bf849 that is not on GitHub.
@@ -33,6 +35,8 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 - **Desktop/regulate-phase-48** has 1 commit on branch reset-merge-check that is not on GitHub.
 - **Desktop/regulate-phase-48** is on branch claude/phase-48, which is already merged; GitHub's main is 101 commits newer.
 - **Desktop/regulate-testflight** has 1 changed file not saved to GitHub.
+- **orbit #2** is a draft pull request; it should be marked ready for review.
+- **dashboards #27** is a draft pull request; it should be marked ready for review.
 - **all-projects #41** is a draft pull request; it should be marked ready for review.
 - **head-untangled-studio #4** is a draft pull request; it should be marked ready for review.
 - **head-untangled-studio #3** is a draft pull request; it should be marked ready for review.
@@ -40,6 +44,7 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 - **head-untangled-studio #2** is a draft pull request; it should be marked ready for review.
 - **pace #25** is a draft pull request; it should be marked ready for review.
 - **Desk #21** is a draft pull request; it should be marked ready for review.
+- **STATUS.md** has not been updated since changes reached GitHub in: content-engine, dashboards, Ledger, orbit.
 
 ## Every folder
 
@@ -50,7 +55,7 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 | Desktop/Claude project files/dashboards | dashboards | main | level with GitHub | 0 / 0 | 12 Nov |
 | Desktop/Claude project files/desk-store | desk | main | 11 behind | 1 / 2 | 24 Oct |
 | Desktop/Claude project files/headuntangled-site | headuntangled-site | main | level with GitHub | 0 / 0 | 10 Nov |
-| Desktop/Claude project files/Ledger | Ledger | main | level with GitHub | 0 / 0 | 09 Nov |
+| Desktop/Claude project files/Ledger | Ledger | main | level with GitHub | 0 / 0 | 15 Nov |
 | Desktop/Claude project files/life-admin | life-admin | main | level with GitHub | 0 / 4 | 11 Nov |
 | Desktop/Claude project files/liferegulationlab-site | liferegulationlab-site | master | level with GitHub | 0 / 0 | 27 Oct |
 | Desktop/Claude project files/mull | mull | claude/moss-glow | level with GitHub | 0 / 0 | 05 Nov |
@@ -60,7 +65,8 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 | Desktop/Claude project files/whole-story/whole-story | whole-story | main | 9 behind | 2 / 3 | 24 Oct |
 | Desktop/claude-mods | claude-mods | main | level with GitHub | 0 / 0 | 14 Oct |
 | Desktop/coaching-studio | coaching-studio | claude/project-thread-ni92pc | level with GitHub | 1 / 1 | 24 Oct |
-| Desktop/content-engine | content-engine | main | level with GitHub | 0 / 7 | 14 Nov |
+| Desktop/content-engine | content-engine | main | level with GitHub | 0 / 10 | 14 Nov |
+| Desktop/orbit | orbit | main | 9 to send | 1 / 0 | 15 Nov |
 | Desktop/pace | pace | main | level with GitHub | 0 / 0 | 11 Nov |
 | Desktop/Projects/Head-Untangled | head-untangled-kit | main | 1 to send, 60 behind | 11 / 98 | 24 Oct |
 | Desktop/Projects/head-untangled-studio | head-untangled-studio | main | 36 behind | 11 / 0 | 03 Nov |
@@ -90,14 +96,15 @@ Open pull requests:
 - all-projects #41: STATUS: cairn #11 merged; its database tests still to run (draft)
 - cairn #1: docs: DPIA pack for the hosted service
 - content-engine #17: Social runs: cancel during a hold, and send only on the Studio's actual reservation (draft)
+- dashboards #27: Only post YouTube replies as the Head Untangled channel (draft)
 - Desk #21: Make Word drop-downs and date boxes work in Pages (draft)
 - head-untangled-studio #2: Session check on every private page, safer publishing recovery, reliable Results, background article jobs (draft)
 - head-untangled-studio #3: Pace companion loops: a format of their own, from clip to Pace folder (draft)
 - head-untangled-studio #4: Results: don't lose a download tap that comes soon after a visit (draft)
 - headuntangled-site #1: Courses page, and show the email address
+- orbit #2: Chat: Orbit checks a comparison's answer itself, from the question's own numbers (draft)
 - pace #2: Share with Coach
 - pace #25: Make Moss's tap reliable, put Now first on Today, simplify Focus (draft)
-- regulate #39: Plus inside the phone apps, through RevenueCat
 
 On GitHub but not on the Mac:
 
@@ -118,7 +125,7 @@ Desktop and Documents sync is off, so iCloud does not hold a copy of the Desktop
 
 Changed in iCloud Drive in the last day. If any of this belongs to a project, it should also be in that project's folder:
 
-- PACE 2 (14 Nov 01:01)
+- Downloads (15 Nov 12:56)
 
 ## Google Drive
 
