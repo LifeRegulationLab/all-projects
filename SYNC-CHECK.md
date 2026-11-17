@@ -1,6 +1,6 @@
 # Sync check
 
-Stuart Houlihan. Run 16 November 2026, 21:00.
+Stuart Houlihan. Run 17 November 2026, 21:00.
 
 Each evening the Mac compares every project folder with GitHub, brings a folder up to date when that is safe, and writes this page. It never deletes, merges or sends code. [STATUS.md](STATUS.md) is the longer account of where each app stands, last updated 23 October 2026, 19:45 (Guernsey).
 
@@ -36,9 +36,7 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 - **Desktop/regulate-phase-48** is on branch claude/phase-48, which is already merged; GitHub's main is 101 commits newer.
 - **Desktop/regulate-testflight** has 1 changed file not saved to GitHub.
 - **orbit #2** is a draft pull request; it should be marked ready for review.
-- **dashboards #27** is a draft pull request; it should be marked ready for review.
 - **all-projects #41** is a draft pull request; it should be marked ready for review.
-- **head-untangled-studio #4** is a draft pull request; it should be marked ready for review.
 - **head-untangled-studio #3** is a draft pull request; it should be marked ready for review.
 - **content-engine #17** is a draft pull request; it should be marked ready for review.
 - **head-untangled-studio #2** is a draft pull request; it should be marked ready for review.
@@ -46,16 +44,21 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 - **Desk #21** is a draft pull request; it should be marked ready for review.
 - **STATUS.md** has not been updated since changes reached GitHub in: content-engine, dashboards, Ledger, orbit.
 
+## Brought up to date tonight
+
+- Desktop/Claude project files/dashboards: 1 new commit from GitHub.
+- Desktop/Claude project files/Ledger: 4 new commits from GitHub.
+
 ## Every folder
 
 | Folder | Repo | Branch | State | Changed / new files | Last commit |
 | --- | --- | --- | --- | --- | --- |
 | Desktop/cairn | cairn | claude/loving-brahmagupta-6jwg45 | level with GitHub | 0 / 1 | 10 Nov |
 | Desktop/Claude project files/Cairn/cairn-app | cairn | main | 5 behind | 1 / 1 | 24 Oct |
-| Desktop/Claude project files/dashboards | dashboards | main | level with GitHub | 0 / 0 | 12 Nov |
+| Desktop/Claude project files/dashboards | dashboards | main | brought up to date (1) | 0 / 0 | 12 Nov |
 | Desktop/Claude project files/desk-store | desk | main | 11 behind | 1 / 2 | 24 Oct |
 | Desktop/Claude project files/headuntangled-site | headuntangled-site | main | level with GitHub | 0 / 0 | 10 Nov |
-| Desktop/Claude project files/Ledger | Ledger | main | level with GitHub | 0 / 0 | 15 Nov |
+| Desktop/Claude project files/Ledger | Ledger | main | brought up to date (4) | 0 / 0 | 15 Nov |
 | Desktop/Claude project files/life-admin | life-admin | main | level with GitHub | 0 / 4 | 11 Nov |
 | Desktop/Claude project files/liferegulationlab-site | liferegulationlab-site | master | level with GitHub | 0 / 0 | 27 Oct |
 | Desktop/Claude project files/mull | mull | claude/moss-glow | level with GitHub | 0 / 0 | 05 Nov |
@@ -75,7 +78,7 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 | Desktop/regulate-phase-47 | regulate | claude/phase-47 | level with GitHub | 0 / 0 | 05 Nov |
 | Desktop/regulate-phase-48 | regulate | claude/phase-48 | level with GitHub | 0 / 0 | 05 Nov |
 | Desktop/regulate-testflight | regulate | HEAD | fixed copy, not on a branch | 1 / 2 | 24 Oct |
-| ~/all-projects | all-projects | main | level with GitHub | 0 / 0 | 15 Nov |
+| ~/all-projects | all-projects | main | level with GitHub | 0 / 0 | 16 Nov |
 
 Notes:
 
@@ -96,14 +99,11 @@ Open pull requests:
 - all-projects #41: STATUS: cairn #11 merged; its database tests still to run (draft)
 - cairn #1: docs: DPIA pack for the hosted service
 - content-engine #17: Social runs: cancel during a hold, and send only on the Studio's actual reservation (draft)
-- dashboards #27: Only post YouTube replies as the Head Untangled channel (draft)
 - Desk #21: Make Word drop-downs and date boxes work in Pages (draft)
 - head-untangled-studio #2: Session check on every private page, safer publishing recovery, reliable Results, background article jobs (draft)
 - head-untangled-studio #3: Pace companion loops: a format of their own, from clip to Pace folder (draft)
-- head-untangled-studio #4: Results: don't lose a download tap that comes soon after a visit (draft)
 - headuntangled-site #1: Courses page, and show the email address
 - orbit #2: Chat: Orbit checks a comparison's answer itself, from the question's own numbers (draft)
-- pace #2: Share with Coach
 - pace #25: Make Moss's tap reliable, put Now first on Today, simplify Focus (draft)
 
 On GitHub but not on the Mac:
@@ -129,9 +129,7 @@ Nothing changed in iCloud Drive in the last day.
 
 Copied Desktop/Claude project files to Google Drive, My Drive/Mac backup (git folders, build output and the Tautenay and HSC folder left out).
 
-Changed in Google Drive in the last day, apart from the backup. If any of this belongs to a project, it should also be in that project's folder:
-
-- LRL Marketing Workforce (16 Nov 08:34)
+Nothing else changed in Google Drive in the last day.
 
 ## Cloudflare R2
 
