@@ -1,6 +1,6 @@
 # Sync check
 
-Stuart Houlihan. Run 22 November 2026, 21:00.
+Stuart Houlihan. Run 23 November 2026, 21:00.
 
 Each evening the Mac compares every project folder with GitHub, brings a folder up to date when that is safe, and writes this page. It never deletes, merges or sends code. [STATUS.md](STATUS.md) is the longer account of where each app stands, last updated 23 October 2026, 19:45 (Guernsey).
 
@@ -65,7 +65,7 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 | Desktop/regulate-phase-47 | regulate | claude/phase-47 | level with GitHub | 0 / 0 | 05 Nov |
 | Desktop/regulate-phase-48 | regulate | claude/phase-48 | level with GitHub | 0 / 0 | 05 Nov |
 | Desktop/regulate-testflight | regulate | HEAD | fixed copy, not on a branch | 1 / 2 | 24 Oct |
-| ~/all-projects | all-projects | main | level with GitHub | 0 / 0 | 21 Nov |
+| ~/all-projects | all-projects | main | level with GitHub | 0 / 0 | 22 Nov |
 
 Notes:
 
@@ -105,13 +105,15 @@ Desktop and Documents sync is off, so iCloud does not hold a copy of the Desktop
 
 Changed in iCloud Drive in the last day. If any of this belongs to a project, it should also be in that project's folder:
 
-- Downloads (22 Nov 12:45)
+- Downloads (23 Nov 08:31)
 
 ## Google Drive
 
 Copied Desktop/Claude project files to Google Drive, My Drive/Mac backup (git folders, build output and the Tautenay and HSC folder left out).
 
-Nothing else changed in Google Drive in the last day.
+Changed in Google Drive in the last day, apart from the backup. If any of this belongs to a project, it should also be in that project's folder:
+
+- LRL Marketing Workforce (23 Nov 09:29)
 
 ## Cloudflare R2
 
