@@ -1,6 +1,6 @@
 # Sync check
 
-Stuart Houlihan. Run 23 November 2026, 21:00.
+Stuart Houlihan. Run 24 November 2026, 21:00.
 
 Each evening the Mac compares every project folder with GitHub, brings a folder up to date when that is safe, and writes this page. It never deletes, merges or sends code. [STATUS.md](STATUS.md) is the longer account of where each app stands, last updated 23 October 2026, 19:45 (Guernsey).
 
@@ -9,9 +9,11 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 - **Desktop/cairn** is on branch claude/loving-brahmagupta-6jwg45, which is already merged; GitHub's main is 1 commit newer.
 - **Desktop/Claude project files/Cairn/cairn-app** has 1 changed file not saved to GitHub, and is 5 commits behind GitHub.
 - **Desktop/Claude project files/desk-store** has 1 changed file not saved to GitHub, and is 13 commits behind GitHub.
+- **Desktop/Claude project files/mull** could not reach GitHub (fatal: unable to access 'https://github.com/LifeRegulationLab/mull/': Recv failure: Connection reset by peer).
 - **Desktop/Claude project files/Voice Studio** has 1 commit not sent to GitHub.
 - **Desktop/Claude project files/Voice Studio** is 2 commits behind GitHub; not updated because it also has commits of its own.
-- **Desktop/Claude project files/whole-story/whole-story** has 2 changed files not saved to GitHub, and is 9 commits behind GitHub.
+- **Desktop/Claude project files/whole-story/whole-story** could not reach GitHub (fatal: unable to access 'https://github.com/LifeRegulationLab/whole-story.git/': Connection timed out after 1074192 milliseconds), and is 9 commits behind GitHub.
+- **Desktop/Claude project files/whole-story/whole-story** has 2 changed files not saved to GitHub.
 - **Desktop/coaching-studio** has 1 changed file not saved to GitHub.
 - **Desktop/coaching-studio** is on branch claude/project-thread-ni92pc, which is already merged; GitHub's main is 28 commits newer.
 - **Desktop/orbit** has 1 changed file not saved to GitHub, and is 1 commit behind GitHub.
@@ -65,7 +67,7 @@ Each evening the Mac compares every project folder with GitHub, brings a folder 
 | Desktop/regulate-phase-47 | regulate | claude/phase-47 | level with GitHub | 0 / 0 | 05 Nov |
 | Desktop/regulate-phase-48 | regulate | claude/phase-48 | level with GitHub | 0 / 0 | 05 Nov |
 | Desktop/regulate-testflight | regulate | HEAD | fixed copy, not on a branch | 1 / 2 | 24 Oct |
-| ~/all-projects | all-projects | main | level with GitHub | 0 / 0 | 22 Nov |
+| ~/all-projects | all-projects | main | level with GitHub | 0 / 0 | 23 Nov |
 
 Notes:
 
@@ -105,15 +107,13 @@ Desktop and Documents sync is off, so iCloud does not hold a copy of the Desktop
 
 Changed in iCloud Drive in the last day. If any of this belongs to a project, it should also be in that project's folder:
 
-- Downloads (23 Nov 08:31)
+- Downloads (25 Nov 20:37)
 
 ## Google Drive
 
 Copied Desktop/Claude project files to Google Drive, My Drive/Mac backup (git folders, build output and the Tautenay and HSC folder left out).
 
-Changed in Google Drive in the last day, apart from the backup. If any of this belongs to a project, it should also be in that project's folder:
-
-- LRL Marketing Workforce (23 Nov 09:29)
+Nothing else changed in Google Drive in the last day.
 
 ## Cloudflare R2
 
